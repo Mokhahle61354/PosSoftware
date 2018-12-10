@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import com.gluonhq.charm.glisten.control.ProgressIndicator?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import eu.hansolo.medusa.Clock?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BubbleChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1024.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="possystem.MainController">
+    <stylesheets>
+        <URL value="@fxml.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="731.0" prefWidth="189.0" style="-fx-background-color: #eeffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="ApLeftButtons" layoutY="236.0" prefHeight="540.0" prefWidth="200.0" style="-fx-background-color: #456A96;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="191.0">
+               <children>
+                  <AnchorPane prefHeight="540.0" prefWidth="40.0" style="-fx-background-color: #456A96;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="0.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <children>
+                        <VBox prefHeight="540.0" prefWidth="40.0" spacing="5.0">
+                           <children>
+                              <Icon content="ACCOUNT_BALANCE_WALLET" prefHeight="30.0" prefWidth="30.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" top="4.0" />
+                                 </VBox.margin>
+                              </Icon>
+                              <Icon content="ACCOUNT_BALANCE_WALLET" layoutX="10.0" layoutY="15.0" prefHeight="30.0" prefWidth="30.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="1.0" top="2.0" />
+                                 </VBox.margin>
+                              </Icon>
+                              <Icon content="ACCOUNT_BALANCE_WALLET" layoutX="10.0" layoutY="15.0" prefHeight="30.0" prefWidth="30.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="1.0" top="2.0" />
+                                 </VBox.margin>
+                              </Icon>
+                              <Icon content="ACCOUNT_BALANCE_WALLET" layoutX="10.0" layoutY="50.0" prefHeight="30.0" prefWidth="30.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="1.0" top="2.0" />
+                                 </VBox.margin>
+                              </Icon>
+                              <Icon content="ACCOUNT_BALANCE_WALLET" layoutX="10.0" layoutY="15.0" prefHeight="30.0" prefWidth="30.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="1.0" top="2.0" />
+                                 </VBox.margin>
+                              </Icon>
+                              <Icon content="ACCOUNT_BALANCE_WALLET" layoutX="10.0" layoutY="55.0" prefHeight="30.0" prefWidth="30.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="1.0" top="2.0" />
+                                 </VBox.margin>
+                              </Icon>
+                              <Icon content="ACCOUNT_BALANCE_WALLET" layoutX="10.0" layoutY="90.0" prefHeight="30.0" prefWidth="30.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="1.0" top="2.0" />
+                                 </VBox.margin>
+                              </Icon>
+                              <Icon content="ACCOUNT_BALANCE_WALLET" layoutX="10.0" layoutY="125.0" prefHeight="30.0" prefWidth="30.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="1.0" top="2.0" />
+                                 </VBox.margin>
+                              </Icon>
+                           </children>
+                           <padding>
+                              <Insets bottom="38.0" />
+                           </padding>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <VBox alignment="TOP_CENTER" prefHeight="540.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton alignment="BASELINE_LEFT" prefHeight="38.0" prefWidth="200.0" text="Dashboard">
+                           <padding>
+                              <Insets left="45.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="200.0" text="Stock Management">
+                           <padding>
+                              <Insets left="45.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="200.0" text="Employee dashboard">
+                           <padding>
+                              <Insets left="45.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="48.0" prefHeight="38.0" prefWidth="200.0" text="Salaries sheet">
+                           <padding>
+                              <Insets left="45.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="86.0" prefHeight="38.0" prefWidth="200.0" text="Remainders">
+                           <padding>
+                              <Insets left="45.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="124.0" prefHeight="38.0" prefWidth="200.0">
+                           <padding>
+                              <Insets left="45.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="124.0" prefHeight="38.0" prefWidth="200.0">
+                           <padding>
+                              <Insets left="45.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="190.0" prefWidth="201.0" style="-fx-background-color: #456A96;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="157.0" fitWidth="200.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label alignment="CENTER" layoutX="5.0" layoutY="157.0" prefHeight="17.0" prefWidth="200.0" text="Profile name" textAlignment="CENTER" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="157.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="157.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="199.0" layoutY="-1.0" prefHeight="731.0" prefWidth="838.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="157.0" prefWidth="869.0" style="-fx-background-color: #FDFDFD;" AnchorPane.bottomAnchor="574.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="97.0" layoutY="74.0" prefHeight="30.0" prefWidth="260.0" text="Business name here">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Clock layoutX="751.0" layoutY="67.0" prefHeight="90.0" prefWidth="87.0" AnchorPane.rightAnchor="0.0" />
+                  <ImageView fitHeight="67.0" fitWidth="88.0" layoutX="31.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../vasity/Project%20files/Icons/download.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </children></AnchorPane>
+            <AnchorPane prefHeight="67.0" prefWidth="838.0" style="-fx-background-color: #FDFDFD;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox layoutX="569.0" prefHeight="65.0" prefWidth="266.0" AnchorPane.rightAnchor="3.0">
+                     <children>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" onAction="#LoadGuiToAddEmployee" prefHeight="68.0" prefWidth="87.0">
+                           <graphic>
+                              <ImageView fx:id="imgBtnAddEmployee" fitHeight="55.0" fitWidth="60.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" />
+                           </graphic></JFXButton>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#LoadSettingsGui" prefHeight="68.0" prefWidth="87.0">
+                           <graphic>
+                              <ImageView fx:id="imgBtnSettings" fitHeight="55.0" fitWidth="60.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="68.0" prefWidth="87.0">
+                           <graphic>
+                              <ImageView fx:id="imgBtnLogout" fitHeight="55.0" fitWidth="60.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </HBox>
+                  <Line endX="497.0" endY="0.9999847412109375" layoutX="341.0" layoutY="65.0" startX="-341.0" startY="0.9999847412109375" AnchorPane.leftAnchor="0.5" AnchorPane.rightAnchor="0.5" />
+                  <JFXTextField labelFloat="true" layoutX="72.0" layoutY="19.0" prefHeight="24.0" prefWidth="464.0" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="303.0" />
+                  <Icon content="ACCESS_TIME" layoutX="31.0" layoutY="15.0" prefHeight="32.0" prefWidth="40.0" />
+               </children></AnchorPane>
+            <TabPane fx:id="mainTabs" layoutX="2.0" layoutY="158.0" prefHeight="572.0" prefWidth="838.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="158.0">
+              <tabs>
+                <Tab onSelectionChanged="#ClickChanged" text="DashBoard">
+                  <content>
+                    <AnchorPane fx:id="apDashBoard" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: red;">
+                           <children>
+                              <AnchorPane layoutX="4.0" layoutY="3.0" prefHeight="538.0" prefWidth="289.0" style="-fx-background-color: orange;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="544.8" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="1.0" layoutY="2.0" prefHeight="39.0" prefWidth="293.0" text="Loged in employees">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXListView layoutX="-1.0" layoutY="54.0" prefHeight="486.0" prefWidth="296.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="52.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="301.0" layoutY="4.0" prefHeight="543.0" prefWidth="540.0" style="-fx-background-color: yellow;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="302.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox layoutX="36.0" layoutY="40.0" prefHeight="157.0" prefWidth="466.0" spacing="150.0" style="-fx-background-color: pink;" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="35.60000000000002">
+                                       <children>
+                                          <ProgressIndicator progress="1.0" radius="70.0" />
+                                          <ProgressIndicator progress="1.0" radius="70.0" />
+                                          <ProgressIndicator progress="1.0" radius="70.0" />
+                                       </children>
+                                    </HBox>
+                                    <LineChart layoutX="16.0" layoutY="272.0" prefHeight="208.0" prefWidth="506.0" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="272.0">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                    <Label alignment="CENTER" layoutX="43.0" layoutY="227.0" prefHeight="32.0" prefWidth="451.0" text="Weekly sales(Profit)" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.80000000000001" AnchorPane.topAnchor="227.0">
+                                       <font>
+                                          <Font size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER" layoutX="36.0" layoutY="110.0" prefHeight="0.0" prefWidth="465.0" AnchorPane.bottomAnchor="415.6" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.39999999999998" AnchorPane.topAnchor="110.0">
+                                       <children>
+                                          <Label prefHeight="32.0" prefWidth="57.0" text="Customers">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="32.0" text="Sales" />
+                                          <Label prefHeight="24.0" prefWidth="65.0" text="Workers" />
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab onSelectionChanged="#ClickChanged" text="Employees">
+                  <content>
+                    <AnchorPane fx:id="apEmployees" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane layoutX="179.0" prefHeight="547.0" prefWidth="659.0">
+                                 <children>
+                                    <AnchorPane layoutX="-3.0" layoutY="2.0" prefHeight="547.0" prefWidth="308.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="0.0" />
+                                 </children></AnchorPane>
+                              <SplitPane dividerPositions="0.24343675417661098" prefHeight="543.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <Label layoutX="7.0" layoutY="55.0" prefHeight="101.0" prefWidth="188.0" text="list of employyes">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="304.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.29797979797979796" layoutX="-1.0" prefHeight="540.0" prefWidth="744.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                   <children>
+                                                      <ImageView fitHeight="150.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
+                                                      <Label layoutX="14.0" layoutY="221.0" text="details of employee" />
+                                                      <Label layoutX="20.0" layoutY="58.0" text="picture of selected employee" />
+                                                      <Label layoutX="-7.0" layoutY="340.0" text="graph showing empployee productivity" />
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="502.0" prefWidth="520.0">
+                                                   <children>
+                                                      <AnchorPane layoutX="-1.0" layoutY="378.0" prefHeight="159.0" prefWidth="520.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                         <children>
+                                                            <Label layoutX="179.0" layoutY="14.0" text="buttons for other graphs" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane prefHeight="384.0" prefWidth="520.0" AnchorPane.bottomAnchor="158.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <BubbleChart prefHeight="340.0" prefWidth="500.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="60.0">
+                                                              <xAxis>
+                                                                <NumberAxis side="BOTTOM" />
+                                                              </xAxis>
+                                                              <yAxis>
+                                                                <NumberAxis side="LEFT" />
+                                                              </yAxis>
+                                                            </BubbleChart>
+                                                            <Label text="graph showing empployee productivity" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab onSelectionChanged="#ClickChanged" text="Charts">
+                    <content>
+                      <AnchorPane fx:id="apCharts" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="547.0" prefWidth="182.0">
+                                 <children>
+                                    <JFXButton prefHeight="38.0" prefWidth="182.0" text="Stock" />
+                                    <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="182.0" text="Employee" />
+                                    <JFXButton layoutX="10.0" layoutY="48.0" prefHeight="38.0" prefWidth="182.0" text="Discount" />
+                                    <JFXButton layoutX="10.0" layoutY="86.0" prefHeight="38.0" prefWidth="182.0" text="Prices" />
+                                    <JFXButton layoutX="10.0" layoutY="124.0" prefHeight="38.0" prefWidth="182.0" text="Profits" />
+                                    <JFXButton layoutX="10.0" layoutY="124.0" prefHeight="38.0" prefWidth="182.0" text="Monthly Payment" />
+                                 </children>
+                              </VBox>
+                              <AnchorPane layoutX="179.0" layoutY="4.0" prefHeight="544.0" prefWidth="659.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="179.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label layoutX="297.0" layoutY="124.0" text="Chart will be displayed here" />
+                                    <Label layoutX="258.0" layoutY="456.0" text="Buttons for charts //changing type and more" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab onSelectionChanged="#ClickChanged" text="Advertising">
+                    <content>
+                      <AnchorPane fx:id="apAdvertising" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+                  <Tab text="Other">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane layoutX="1.0" prefHeight="543.0" prefWidth="839.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="290.0" layoutY="31.0" prefHeight="39.0" prefWidth="260.0" text="Email settings" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="27.0" />
+                                       </font>
+                                    </Label>
+                                    <Line endX="725.0" layoutX="114.0" layoutY="70.0" startX="-114.0" />
+                                    <Label layoutX="12.0" layoutY="90.0" prefHeight="30.0" prefWidth="184.0" text="Marketing email :" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="149.0" layoutY="176.0" prefHeight="20.0" prefWidth="126.0" text="Enter Email address :" />
+                                    <JFXButton layoutX="314.0" layoutY="306.0" prefHeight="38.0" prefWidth="135.0" text="Set Marketing email" />
+                                    <JFXTextField layoutX="155.0" layoutY="203.0" prefHeight="25.0" prefWidth="159.0" promptText="Usename" />
+                                    <Label alignment="CENTER" layoutX="157.0" layoutY="239.0" prefHeight="20.0" prefWidth="126.0" text="Enter Email passwords :" />
+                                    <JFXTextField layoutX="157.0" layoutY="259.0" prefHeight="25.0" prefWidth="266.0" />
+                                    <JFXComboBox layoutX="314.0" layoutY="203.0" promptText="\@gmail.com" />
+                                    <JFXButton layoutX="134.0" layoutY="306.0" prefHeight="38.0" prefWidth="156.0" text="Disconnect current email" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

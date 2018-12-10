@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.chart.BubbleChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.employees.EmployeesDashboardController">
+    <children>
+        <AnchorPane layoutX="179.0" prefHeight="547.0" prefWidth="659.0">
+            <children>
+                <AnchorPane layoutX="-3.0" layoutY="2.0" prefHeight="547.0" prefWidth="308.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="0.0" />
+            </children>
+        </AnchorPane>
+        <SplitPane dividerPositions="0.24343675417661098" prefHeight="543.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <JFXListView fx:id="EmployeesList" layoutX="3.0" layoutY="32.0" onMouseClicked="#handleListMouseClick" prefHeight="446.0" prefWidth="170.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="50.0" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="304.0">
+                    <children>
+                        <SplitPane dividerPositions="0.29797979797979796" layoutX="-1.0" prefHeight="540.0" prefWidth="744.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <items>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="218.0">
+                                    <children>
+                                        <ImageView fx:id="profilePicture" fitHeight="168.0" fitWidth="184.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="14.0" layoutY="221.0" prefHeight="18.0" prefWidth="80.0" text="Name :" />
+                                        <Label layoutX="20.0" layoutY="58.0" text="picture of selected employee" />
+                                        <Label layoutX="-2.0" layoutY="411.0" text="graph showing empployee productivity" />
+                                        <Label fx:id="lblNameOfUser" layoutX="102.0" layoutY="222.0" text="Name of user" />
+                              <Label layoutX="14.0" layoutY="249.0" text="Surname :" />
+                              <Label fx:id="lblSurnameofuser" layoutX="102.0" layoutY="249.0" text="Surname of the user" />
+                              <Label layoutX="14.0" layoutY="272.0" prefHeight="17.0" prefWidth="80.0" text="Date of Birth :" />
+                              <Label fx:id="lblDateodbirth" layoutX="102.0" layoutY="272.0" text="Date of birth of the user" />
+                              <Label layoutX="14.0" layoutY="298.0" prefHeight="18.0" prefWidth="45.0" text="Gender :" />
+                              <Label fx:id="lblGender" layoutX="102.0" layoutY="298.0" text="Gender of the user" />
+                              <Label layoutX="15.0" layoutY="322.0" text="Occupation :" />
+                              <Label fx:id="lblOccupation" layoutX="103.0" layoutY="322.0" text="Occupation of the user" />
+                              <Label layoutX="17.0" layoutY="348.0" text="Nationality :" />
+                              <Label fx:id="lblNationality" layoutX="105.0" layoutY="348.0" text="Nationality of the user" />
+                              <Label layoutX="17.0" layoutY="373.0" text="Address :" />
+                              <Label fx:id="lblAddress" layoutX="105.0" layoutY="373.0" text="Adress of the user" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="502.0" prefWidth="520.0">
+                                    <children>
+                                        <AnchorPane layoutX="-1.0" layoutY="378.0" prefHeight="159.0" prefWidth="520.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                            <children>
+                                                <Label layoutX="179.0" layoutY="14.0" text="buttons for other graphs" />
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane prefHeight="384.0" prefWidth="520.0" AnchorPane.bottomAnchor="158.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <BubbleChart layoutX="10.0" layoutY="91.0" prefHeight="340.0" prefWidth="500.0" AnchorPane.bottomAnchor="-21.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="91.0">
+                                                    <xAxis>
+                                                        <NumberAxis side="BOTTOM" />
+                                                    </xAxis>
+                                                    <yAxis>
+                                                        <NumberAxis side="LEFT" />
+                                                    </yAxis>
+                                                </BubbleChart>
+                                                <Label text="graph showing empployee productivity" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                            </items>
+                        </SplitPane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
