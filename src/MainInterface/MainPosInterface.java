@@ -41,12 +41,15 @@ import java.awt.Font;
 import java.awt.SystemColor;
 
 import Logins.Systems;
+import com.sun.org.apache.bcel.internal.generic.AALOAD;
 
 public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionListener ,MouseListener{
 
         public JFrame Mframe;
 	private JTable table;
 	private JTable table_1;
+        
+      
 	
 	double total =0.0;
 
@@ -94,6 +97,39 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 		list = new JList<>(dlm);
 		
 		list.setFont(font);
+                
+                
+		list.addMouseListener(new MouseAdapter() {
+		    public void mouseClicked(MouseEvent evt) {
+		        JList list = (JList)evt.getSource();
+		        if (evt.getClickCount() == 2) {
+
+		            // Double-click detected
+		            int index = list.locationToIndex(evt.getPoint());
+		            
+		            list.getSelectedIndex();
+		            
+		            list.addMouseListener(
+		                    new MouseAdapter(){
+		                        public void mouseClicked(MouseEvent e){
+		                              System.err.printf("\nmouseClicked\n"); 
+		                        }
+		                    }
+		            );
+		           
+		            dlm.removeElement(dlm);
+		            dlm.remove(list.getSelectedIndex());
+		            
+		        } else if (evt.getClickCount() == 3) {
+
+		            // Triple-click detected
+		            int index = list.locationToIndex(evt.getPoint());
+		        }
+		    }
+		});
+		
+		
+                
 		
 		list.setBounds(10, 11, 455, 538);
 		Mframe.getContentPane().add(list);
@@ -143,7 +179,6 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 					dlm.addElement(r);
 					
 				}
-				
 				
 			}
 		});
@@ -716,15 +751,17 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 		btnCancel.setBounds(321, 628, 144, 52);
 		Mframe.getContentPane().add(btnCancel);
 		
-		JButton btnNewButton_1 = new JButton("ADVANCED OPTIONS");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnAdvancedOptions = new JButton("ADVANCED OPTIONS");
+		btnAdvancedOptions.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				if(e.getSource() == btnNewButton_1)
+				if(e.getSource() == btnAdvancedOptions)
 				{
 					
-					Mframe.setVisible(false);
-					return;
+					Systems logIn = new Systems();
+                                        
+                                        logIn.frmLoginSystem.setVisible(true);
+                                        
 					//ss.managerLoginpass(ss.txtName.getText(),ss.txtpass.getText());
 				}
 				/*	logInScreen = new managers_logInSystem();
@@ -734,19 +771,19 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
 			}
 		});
-		btnNewButton_1.setBackground(new Color(128, 0, 0));
-		btnNewButton_1.setBounds(1119, 636, 139, 44);
-		Mframe.getContentPane().add(btnNewButton_1);
-		
-		JButton button = new JButton("ADVANCED OPTIONS");
-		button.setBackground(new Color(128, 0, 0));
-		button.setBounds(970, 636, 139, 44);
-		Mframe.getContentPane().add(button);
-		
-		JButton button_1 = new JButton("ADVANCED OPTIONS");
-		button_1.setBackground(new Color(128, 0, 0));
-		button_1.setBounds(821, 636, 139, 44);
-		Mframe.getContentPane().add(button_1);
+		btnAdvancedOptions.setBackground(new Color(128, 0, 0));
+		btnAdvancedOptions.setBounds(1119, 636, 139, 44);
+		Mframe.getContentPane().add(btnAdvancedOptions);
+//		
+//		JButton button = new JButton("ADVANCED OPTIONS");
+//		button.setBackground(new Color(128, 0, 0));
+//		button.setBounds(970, 636, 139, 44);
+//		Mframe.getContentPane().add(button);
+//		
+//		JButton button_1 = new JButton("ADVANCED OPTIONS");
+//		button_1.setBackground(new Color(128, 0, 0));
+//		button_1.setBounds(821, 636, 139, 44);
+//		Mframe.getContentPane().add(button_1);
 		
 		JButton btnTotal = new JButton("TOTAL");
 		btnTotal.addActionListener(new ActionListener() {
