@@ -143,7 +143,7 @@ public class Registration{
                         employee.setID(txtId.getText());
                         employee.setName(txtName.getText());
                         employee.setSurname(txtSurname.getText());
-                        employee.setOccupation(txtposition.getText());
+                        employee.setOccupation(cmbPosition.getSelectedItem().toString());
                         employee.setDateOfBirth(txtdob.getText());
                         employee.setNationality(combo.getSelectedItem().toString());
                         employee.setGender(txtgender.getText());
@@ -198,7 +198,13 @@ public class Registration{
 		lblpic.setBackground(new Color(102, 102, 102));
 		lblpic.setBounds(405, 14, 137, 137);
 		F.getContentPane().add(lblpic);
-		
-	}
+        }
+        
+	 public void setCMBToManager()
+        {
+           cmbPosition.setSelectedIndex(1);
+           cmbPosition.disable();
+        }	
+	
 	
 }
