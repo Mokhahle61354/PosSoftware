@@ -160,7 +160,7 @@ public class Systems extends ManagementMain
         TimeManagement LoginTime=new TimeManagement();
         if(user.isAuthenticated(txtID.getText(),user.EncrypteString(txtpass.getText())))
         {
-            if(user.getOccupation().equals("Manager"))
+            if(user.getOccupation().toLowerCase().equals("manager"))
             {
                 ShowStage();
             }
