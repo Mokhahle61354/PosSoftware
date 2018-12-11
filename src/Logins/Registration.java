@@ -52,7 +52,7 @@ public class Registration{
 		
 		F = new JFrame();
 		F.setBounds(100, 100, 588, 441);
-		F.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\malva\\Desktop\\finalproject\\imagelog.jpg"));
+		F.setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		F.setTitle("REGISTRATION");
 		F.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		F.getContentPane().setLayout(null);
@@ -115,10 +115,11 @@ public class Registration{
 		lblNationality.setBounds(10, 299, 114, 14);
 		F.getContentPane().add(lblNationality);
 		
-		txtposition = new JTextField();
-		txtposition.setBounds(173, 178, 198, 20);
-		F.getContentPane().add(txtposition);
-		txtposition.setColumns(10);
+		JComboBox combobox= new JComboBox();
+                combobox.setModel(new DefaultComboBoxModel(new String[] {"<select counrty of origin>","MANANGER","OTHERS"}));
+                combobox.setToolTipText("");
+		combobox.setBounds(173, 178, 198, 20);
+		F.getContentPane().add(combobox);
 		
 		txtdob = new JTextField();
 		txtdob.setBounds(173, 220, 198, 20);
