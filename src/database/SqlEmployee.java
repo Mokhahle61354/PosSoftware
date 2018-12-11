@@ -163,7 +163,8 @@ public class SqlEmployee
     {
         boolean isExist = false;
         SQLiteJDBC DataManangement = new SQLiteJDBC(sDatabaseName);
-        return DataManangement.DoesManagerExist();
+        isExist = DataManangement.DoesManagerExist();
+        return isExist;
     }
     public void Update(String id)
     {
