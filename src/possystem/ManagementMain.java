@@ -151,16 +151,11 @@ public class ManagementMain extends Application {
         }
     }
     
-    Registration reg = new Registration();
     
     private void RegisterMain()
     {
-        reg.F.setVisible(true);
-        reg.setCMBToManager();
+        Registration reg = new Registration();
+        reg.F.setVisible(true); 
     }
     
-    public void initRegistration(Registration reg)
-    {
-        this.reg = reg;
-    }
 }
