@@ -159,6 +159,12 @@ public class SqlEmployee
         SQLiteJDBC DataManagement = new SQLiteJDBC(sDatabaseName);
         DataManagement.Select(sql);
     }
+    public boolean DoesManagerExist()
+    {
+        boolean isExist = false;
+        SQLiteJDBC DataManangement = new SQLiteJDBC(sDatabaseName);
+        return DataManangement.DoesManagerExist();
+    }
     public void Update(String id)
     {
         //update

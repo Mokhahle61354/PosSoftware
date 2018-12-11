@@ -330,5 +330,84 @@ public class SQLiteJDBC
         }
                 
     }
+    
+    public boolean DoesDataBaseExist(String tableName)
+    {
+        boolean isExist = false;
+        
+        String sql = "SELECT * FROM sqlite_master WHERE type='table' AND name='{"+tableName+"}';";
+        
+        Connection con = null; 
+        Statement stmt = null;
+        
+        try 
+        {
+            Class.forName(sClassName);
+            con = DriverManager.getConnection(sConnectionUrl);
+            con.setAutoCommit(false);
+            System.out.println("Opened database successfully");
+
+            stmt = con.createStatement();
+            stmt.executeUpdate(sql);
+            con.commit();
+
+            ResultSet rs = stmt.executeQuery(sql);
+
+            while (rs.next())
+            {
+                isExist = true;
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+            isExist = false;
+        }
+        finally
+        {
+            System.out.println("Operation done successfully");
+            return isExist;
+        }  
+        
+    }
+    
+    public boolean DoesManagerExist()
+    {
+        boolean isExist = false;
+        String sql = "SELECT * FROM EMPLOYEES;";
+        Connection con = null; 
+        Statement stmt = null;
+        
+        try 
+        {
+            Class.forName(sClassName);
+            con = DriverManager.getConnection(sConnectionUrl);
+            System.out.println("Opened database successfully");
+            con.setAutoCommit(false);
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery( sql );
+
+            while ( rs.next() ) 
+            {
+                String  OCCUPATION = rs.getString("OCCUPATION");
+                
+                if(OCCUPATION.toLowerCase().equals("manager"))
+                    isExist = true;
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+            
+        } catch ( Exception e ) 
+        {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+            isExist = false;
+        }
+        System.out.println("Operation done successfully");
+        return isExist;
+    }
  
 }
