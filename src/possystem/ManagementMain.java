@@ -151,11 +151,9 @@ public class ManagementMain extends Application {
         }
     }
     
-    
     private void RegisterMain()
     {
         Registration reg = new Registration();
-        reg.F.setVisible(true); 
+        reg.F.setVisible(true);
     }
-    
 }
