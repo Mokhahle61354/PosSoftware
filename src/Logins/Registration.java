@@ -143,7 +143,7 @@ public class Registration{
                         employee.setID(txtId.getText());
                         employee.setName(txtName.getText());
                         employee.setSurname(txtSurname.getText());
-                        employee.setOccupation(txtposition.getText());
+                        employee.setOccupation(cmbPosition.getSelectedItem().toString());
                         employee.setDateOfBirth(txtdob.getText());
                         employee.setNationality(combo.getSelectedItem().toString());
                         employee.setGender(txtgender.getText());
