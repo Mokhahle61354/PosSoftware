@@ -21,6 +21,7 @@ import java.awt.Toolkit;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextArea;
 import possystem.ManagementMain;
 
 public class Registration{
@@ -42,6 +43,7 @@ public class Registration{
 	private JLabel lblpic;
 	public JButton btnRegister;
         public JComboBox cmbPosition;
+        private JLabel lblAdress;
         
         private String sFilepath;
 	
@@ -117,7 +119,7 @@ public class Registration{
 		F.getContentPane().add(lblNationality);
 		
 		JComboBox cmbPosition= new JComboBox();
-                cmbPosition.setModel(new DefaultComboBoxModel(new String[] {"<choose occupation>","MANANGER","OTHERS"}));
+                cmbPosition.setModel(new DefaultComboBoxModel(new String[] {"<choose occupation>","MANAGER","OTHERS"}));
                 cmbPosition.setToolTipText("");
 		cmbPosition.setBounds(173, 178, 198, 20);
 		F.getContentPane().add(cmbPosition);
@@ -193,6 +195,15 @@ public class Registration{
 		btnuploadpic.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnuploadpic.setBounds(405, 162, 131, 23);
 		F.getContentPane().add(btnuploadpic);
+                
+                lblAdress = new JLabel("ADDRESS");
+		lblAdress.setBounds(405,220, 114, 14);
+		F.getContentPane().add(lblAdress);
+                
+                JTextArea textarea=new JTextArea();
+                textarea.setBounds(405,240,130, 120);
+                F.getContentPane().add(textarea);
+                
 		
 		lblpic = new JLabel("");
 		lblpic.setBackground(new Color(102, 102, 102));
