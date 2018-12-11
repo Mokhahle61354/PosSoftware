@@ -41,6 +41,7 @@ public class Registration{
 	private JButton btnuploadpic;
 	private JLabel lblpic;
 	public JButton btnRegister;
+        public JComboBox cmbPosition;
         
         private String sFilepath;
 	
@@ -115,11 +116,11 @@ public class Registration{
 		lblNationality.setBounds(10, 299, 114, 14);
 		F.getContentPane().add(lblNationality);
 		
-		JComboBox combobox= new JComboBox();
-                combobox.setModel(new DefaultComboBoxModel(new String[] {"<select counrty of origin>","MANANGER","OTHERS"}));
-                combobox.setToolTipText("");
-		combobox.setBounds(173, 178, 198, 20);
-		F.getContentPane().add(combobox);
+		JComboBox cmbPosition= new JComboBox();
+                cmbPosition.setModel(new DefaultComboBoxModel(new String[] {"<select counrty of origin>","MANANGER","OTHERS"}));
+                cmbPosition.setToolTipText("");
+		cmbPosition.setBounds(173, 178, 198, 20);
+		F.getContentPane().add(cmbPosition);
 		
 		txtdob = new JTextField();
 		txtdob.setBounds(173, 220, 198, 20);
