@@ -117,7 +117,7 @@ public class Registration{
 		F.getContentPane().add(lblNationality);
 		
 		JComboBox cmbPosition= new JComboBox();
-                cmbPosition.setModel(new DefaultComboBoxModel(new String[] {"<choose occupation>","MANANGER","OTHERS"}));
+                cmbPosition.setModel(new DefaultComboBoxModel(new String[] {"<choose occupation>","MANAGER","OTHERS"}));
                 cmbPosition.setToolTipText("");
 		cmbPosition.setBounds(173, 178, 198, 20);
 		F.getContentPane().add(cmbPosition);
