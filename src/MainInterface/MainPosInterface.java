@@ -746,9 +746,22 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 		Mframe.getContentPane().add(btnCredit);
 		
 		JButton btnCancel = new JButton("CANCEL");
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+				
+				
+				
+				if(arg0.getSource()==btnCancel) {
+			        dlm.removeAllElements();
+				}
+			}
+	});
 		btnCancel.setBackground(new Color(135, 206, 250));
 		btnCancel.setBounds(321, 628, 144, 52);
-		Mframe.getContentPane().add(btnCancel);
+		frame.getContentPane().add(btnCancel);
+		
 		
 		JButton btnAdvancedOptions = new JButton("ADVANCED OPTIONS");
 		btnAdvancedOptions.addActionListener(new ActionListener() {
