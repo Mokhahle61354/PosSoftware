@@ -198,7 +198,13 @@ public class Registration{
 		lblpic.setBackground(new Color(102, 102, 102));
 		lblpic.setBounds(405, 14, 137, 137);
 		F.getContentPane().add(lblpic);
-		
-	}
+        }
+        
+	 public void setCMBToManager()
+        {
+           cmbPosition.setSelectedIndex(1);
+           cmbPosition.disable();
+        }	
+	
 	
 }
