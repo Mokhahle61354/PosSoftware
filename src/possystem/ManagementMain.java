@@ -6,6 +6,7 @@
 package possystem;
 
 import Logins.FinalPosMain;
+import Logins.Registration;
 import database.SqlEmployee;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -60,8 +61,15 @@ public class ManagementMain extends Application {
                     initAndShowGUI();
                 }
             });
-
-            PosMain();
+            
+            SqlEmployee manager = new SqlEmployee();
+            //below condition checks if manager exist in database
+            if(manager.DoesManagerExist())
+                LoginMain();
+            else //it allows manager to create himself.
+                RegisterMain();
+                
+                
 
         }
         //end of Creating table for our database
@@ -133,7 +141,7 @@ public class ManagementMain extends Application {
     
     
     
-    private void PosMain()
+    private void LoginMain()
     {
         Logins.Systems s = new Logins.Systems();
         try {
@@ -141,5 +149,11 @@ public class ManagementMain extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    
+    private void RegisterMain()
+    {
+        Registration reg = new Registration();
+        reg.F.setVisible(true);
     }
 }
