@@ -1,22 +1,13 @@
 package MainInterface;
 
-import java.awt.EventQueue;
 
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import java.awt.GridLayout;
-import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
 import javax.swing.JList;
-import javax.swing.JOptionPane;
 
 import java.awt.Color;
-import java.awt.Component;
-
-import javax.sound.midi.SoundbankResource;
-import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -25,30 +16,24 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.awt.event.ActionEvent;
 import javax.swing.JSeparator;
-import javax.swing.SwingConstants;
 
 import org.w3c.dom.events.EventTarget;
 import org.w3c.dom.views.AbstractView;
 
-import sun.security.jgss.LoginConfigImpl;
 
 import java.awt.Font;
 import java.awt.SystemColor;
 
 import Logins.Systems;
-import com.sun.org.apache.bcel.internal.generic.AALOAD;
 
 public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionListener ,MouseListener{
 
         public JFrame Mframe;
 	private JTable table;
 	private JTable table_1;
-        
+         public JFrame frame;
       
 	
 	double total =0.0;
@@ -732,14 +717,28 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
 			}
 		});
+                
+                
+                
 		btnChickenSandwich.setBackground(Color.PINK);
 		btnChickenSandwich.setBounds(501, 207, 122, 70);
 		Mframe.getContentPane().add(btnChickenSandwich);
 		
-		JButton btnNewButton = new JButton("CASH");
+			JButton btnNewButton = new JButton("CASH");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				CashButton cash = new CashButton();
+                                
+                  
+						
+				cash.frame.setVisible(true);
+				
+			}
+		});
 		btnNewButton.setBackground(new Color(135, 206, 235));
 		btnNewButton.setBounds(10, 628, 144, 52);
-		Mframe.getContentPane().add(btnNewButton);
+                 frame.getContentPane().add(btnNewButton);
 		
 		JButton btnCredit = new JButton("CREDIT");
 		btnCredit.setBackground(new Color(135, 206, 235));
@@ -747,9 +746,22 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 		Mframe.getContentPane().add(btnCredit);
 		
 		JButton btnCancel = new JButton("CANCEL");
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+				
+				
+				
+				if(arg0.getSource()==btnCancel) {
+			        dlm.removeAllElements();
+				}
+			}
+	});
 		btnCancel.setBackground(new Color(135, 206, 250));
 		btnCancel.setBounds(321, 628, 144, 52);
-		Mframe.getContentPane().add(btnCancel);
+		frame.getContentPane().add(btnCancel);
+		
 		
 		JButton btnAdvancedOptions = new JButton("ADVANCED OPTIONS");
 		btnAdvancedOptions.addActionListener(new ActionListener() {
