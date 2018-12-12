@@ -24,7 +24,7 @@ public class SqlSoldStock
                //create table
         String sql;
         sql = "CREATE TABLE IF NOT EXISTS SOLD_STOCK"
-        + "( ID           TEXT    NOT NULL,"      
+        + "( ID           TEXT    NOT NULL,"
         + " NAME           TEXT    NOT NULL, "
         + " PRICE        REAL    NOT NULL, "
         + " DISCOUNT        REAL    NOT NULL, "
