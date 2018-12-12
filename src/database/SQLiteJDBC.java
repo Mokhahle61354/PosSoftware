@@ -185,10 +185,9 @@ public class SQLiteJDBC
     public boolean DoesIdExist(String id)
     {
         Connection con = null; 
-        PreparedStatement pstmt = null;
+        Statement stmt = null;
         
-        String sql = "SELECT * FROM EMPLOYEES "
-        + "WHERE id=?";
+        String sql = "SELECT * FROM EMPLOYEES ";
         
         boolean isExist = false;
         
@@ -196,24 +195,26 @@ public class SQLiteJDBC
         {
             Class.forName(sClassName);
             con = DriverManager.getConnection(sConnectionUrl);
-            con.setAutoCommit(false);
-            pstmt = con.prepareStatement(sql);
             System.out.println("Opened database successfully");
-           
-            pstmt.setString(1, id); // setID
-            pstmt.executeUpdate();  //update picture
-            con.commit();
-            
-            pstmt.close();
+            con.setAutoCommit(false);
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery( sql );
+
+            while ( rs.next() ) 
+            {
+                String dbID = rs.getString("id");
+                if(dbID.equals(id))
+                    isExist = true;
+            }
+            rs.close();
+            stmt.close();
             con.close();
             
-            isExist = true;
-            
-        } catch (Exception e) 
+        } catch ( Exception e ) 
         {
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(0);
             isExist = false;
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
         }
         finally
         {
