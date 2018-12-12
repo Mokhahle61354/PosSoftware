@@ -54,7 +54,7 @@ public class EmployeesDashboardController implements Initializable {
 //        profilePicture.setImage(value);
 
         String ID = EmployeesList.getSelectionModel().getSelectedItem().toString();
-        ID = ID.substring(0, 3);
+        ID = ID.substring(0, 7);
         
         UserInfo user = new UserInfo(ID);
         profilePicture.setImage(user.getPicture());
@@ -72,9 +72,5 @@ public class EmployeesDashboardController implements Initializable {
         System.out.println("Name of user"+user.getName());
         
     }
-    
-    
-    
-
     
 }
