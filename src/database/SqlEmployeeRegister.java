@@ -23,7 +23,7 @@ public class SqlEmployeeRegister
         //create table
         String sql;
         sql = "CREATE TABLE IF NOT EXISTS EMPLOYEES "
-        + " ID           TEXT    NOT NULL, "
+        + " (ID           TEXT    NOT NULL, "
         + " NAME           TEXT    NOT NULL, "
         + " SURNAME        TEXT    NOT NULL, "
         + " DATE  TEXT     NOT NULL)";
