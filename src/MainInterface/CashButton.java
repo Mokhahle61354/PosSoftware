@@ -25,7 +25,12 @@ public class CashButton {
     private JTextField txtMoneyPaid;
     private JTextField txtChange;
 	
-	MainPosInterface mainPOSsystem  =  new MainPosInterface();
+	static MainPosInterface mainPOSsystem  =  new MainPosInterface();
+        
+        public void InitMainPosInterface(MainPosInterface mainPOSsystem){
+            this.mainPOSsystem=mainPOSsystem;
+        }
+
 	
     String sNumber = "";
     String sFinalNumber = "";
@@ -101,7 +106,6 @@ public class CashButton {
 		frame = new JFrame();
 		frame.getContentPane().setFont(new Font("Tahoma", Font.BOLD, 11));
 		frame.setBounds(100, 100, 520, 487);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnExit = new JButton("EXIT");

@@ -80,7 +80,7 @@ public class OrderRecord {
 	@Override
 	public String toString() {
 		
-		return "name :" +name + " price :" +price + " Total " +(total+price);
+		return " " +name + "       PRICE : " +price + "       TOTAL : " +(total+price);
 	}
 
 	public String toString1() {	

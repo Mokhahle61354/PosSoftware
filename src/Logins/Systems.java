@@ -63,7 +63,6 @@ public class Systems extends ManagementMain
         frmLoginSystem.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/imagelog.jpg")));
         frmLoginSystem.setTitle("LOGIN SYSTEM");
         frmLoginSystem.setBounds(100, 100, 446, 297);
-        frmLoginSystem.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frmLoginSystem.getContentPane().setLayout(null);
         frmLoginSystem.setContentPane(new JLabel(new ImageIcon(getClass().getResource("/images/imagework.jpg"))));
 
@@ -86,6 +85,7 @@ public class Systems extends ManagementMain
                 txtID.setText("");
                 txtpass.setText("");
                 frmLoginSystem.setVisible(false);
+                
             }
         });
 
@@ -158,6 +158,7 @@ public class Systems extends ManagementMain
     public void CheckigInputToDefineTheUser() {
         UserInfo user=new UserInfo();
         TimeManagement LoginTime=new TimeManagement();
+        MainPosInterface m = new MainPosInterface();
         if(user.isAuthenticated(txtID.getText(),user.EncrypteString(txtpass.getText())))
         {
             if(user.getOccupation().toLowerCase().equals("manager"))
@@ -172,10 +173,14 @@ public class Systems extends ManagementMain
                 txtID.setText("");
                 txtpass.setText("");
                 frmLoginSystem.setVisible(false);
-                MainPosInterface m = new MainPosInterface();
+              
+            m.Mframe.setLocationRelativeTo(null);
+                
                 m.Mframe.setVisible(true); 
             }
         }
+        else 
+            m.Mframe.setVisible(true);
         
        /* if (txtID.getText().equals("project") && txtpass.getText().equals("0000")) {
             txtID.setText("");
