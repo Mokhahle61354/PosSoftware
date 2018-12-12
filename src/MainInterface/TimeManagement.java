@@ -18,6 +18,13 @@ public class TimeManagement
 		Date date = new Date();
 		return dateFormat.format(date);
 	}
+        
+        public String getCurrentDate()
+	{
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+		Date date = new Date();
+		return dateFormat.format(date);
+	}
 	
 	public void setStartOfDutyTime()
 	{

@@ -8,6 +8,7 @@ package database;
 import com.jfoenix.controls.JFXListView;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Collection;
@@ -64,6 +65,51 @@ public class SqlToGui
             System.exit(0);
         }
         System.out.println("Operation done successfully");
+    }
+    
+    public void AddEmployeeToRegister(JFXListView EmployeeList)
+    {
+        DBVariables DBvar = new DBVariables();
+        String sDatabaseName = DBvar.getEmployeeRegisterDB();
+        String sql = "SELECT * FROM EMPLOYEES;";
+        Connection con = null; 
+        Statement stmt = null;
+        ObservableList<String> ListOfIdName = FXCollections.observableArrayList();
+
+        try 
+        {
+            Class.forName(sClassName);
+            con = DriverManager.getConnection("jdbc:sqlite:"+sDatabaseName);
+            System.out.println("Opened database successfully");
+            con.setAutoCommit(false);
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery( sql );
+
+            while ( rs.next() ) 
+            {
+                String id = rs.getString("id");
+                String  name = rs.getString("name");
+                String surname = rs.getString("surname");
+                
+                
+
+                ListOfIdName.add(id +" "+ name +" "+surname);
+
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+
+            //This will show name of employees on the list
+            EmployeeList.setItems(ListOfIdName);
+
+        } catch ( Exception e ) 
+        {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        System.out.println("Operation done successfully");
+        
     }
     
     public void LinePlotSoldStockPriceDate(String NameOfProduct,LineChart<?,?> lineChart)

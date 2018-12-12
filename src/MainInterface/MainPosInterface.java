@@ -735,9 +735,10 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
 				CashButton cash = new CashButton();
                                 
-                  
 						
 				cash.frame.setVisible(true);
+                                
+                                
 				
 			}
 		});

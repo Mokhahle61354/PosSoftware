@@ -34,6 +34,16 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import Logins.Registration;
+import MainInterface.TimeManagement;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXTextField;
+import database.SqlEmployee;
+import database.SqlEmployeeRegister;
+import database.SqlToGui;
+import functions.UserInfo;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  * FXML Controller class
@@ -216,5 +226,27 @@ public class MainController implements Initializable
     
     }
     //
+    @FXML public JFXTextField txtEmployeeID;
+    @FXML public JFXListView lstPreserntEmployees;
+    @FXML
+    public void MarkEmployeeAsPresent(ActionEvent event)
+    {
+        String ID = txtEmployeeID.getText();
+        SqlEmployee employee = new SqlEmployee();
+        boolean isExist = employee.DoesThisEmployeeExist(ID);
+        if(isExist)
+        {
+            TimeManagement time = new TimeManagement();
+            UserInfo emp = new UserInfo(ID);
+            SqlEmployeeRegister register  = new SqlEmployeeRegister();
+            register.setID(ID);
+            register.setName(emp.getName());
+            register.setSurname(emp.getSurname());
+            register.setDate(time.getCurrentDate());
+            register.insert();
+        }
+       
+        
+    }
     
 }

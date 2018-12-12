@@ -8,6 +8,8 @@ package possystem;
 import Logins.FinalPosMain;
 import Logins.Registration;
 import database.SqlEmployee;
+import database.SqlEmployeeRegister;
+import database.SqlSoldStock;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -44,11 +46,16 @@ public class ManagementMain extends Application {
         
         //stage.show();
         
-        SqlEmployee DB = new SqlEmployee();
-        if(DB.CreateTable())
-            System.out.println("Employee table already exist");
-        else
-            System.out.println("Employee table created");
+        SqlEmployee empDB = new SqlEmployee();
+        empDB.CreateTable();
+        SqlEmployeeRegister regDB = new SqlEmployeeRegister();
+        regDB.CreateTable();
+        SqlSoldStock soldStock = new SqlSoldStock();
+        soldStock.CreateTable();
+//        if(DB.CreateTable())
+//            System.out.println("Employee table already exist");
+//        else
+//            System.out.println("Employee table created");
         
         
         //start of Creating table for our database
@@ -156,4 +163,9 @@ public class ManagementMain extends Application {
         Registration reg = new Registration();
         reg.F.setVisible(true);
     }
+    
+    static Registration reg = new Registration();
+    
+    
+    
 }

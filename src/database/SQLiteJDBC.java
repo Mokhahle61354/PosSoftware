@@ -182,6 +182,47 @@ public class SQLiteJDBC
         System.out.println("Operation done successfully");
     }
     
+    public boolean DoesIdExist(String id)
+    {
+        Connection con = null; 
+        PreparedStatement pstmt = null;
+        
+        String sql = "SELECT * FROM EMPLOYEES "
+        + "WHERE id=?";
+        
+        boolean isExist = false;
+        
+        try 
+        {
+            Class.forName(sClassName);
+            con = DriverManager.getConnection(sConnectionUrl);
+            con.setAutoCommit(false);
+            pstmt = con.prepareStatement(sql);
+            System.out.println("Opened database successfully");
+           
+            pstmt.setString(1, id); // setID
+            pstmt.executeUpdate();  //update picture
+            con.commit();
+            
+            pstmt.close();
+            con.close();
+            
+            isExist = true;
+            
+        } catch (Exception e) 
+        {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+            isExist = false;
+        }
+        finally
+        {
+            System.out.println("Operation done successfully");
+            return isExist;
+        }
+        
+    }
+    
     
     public void delete(String sql)
     {

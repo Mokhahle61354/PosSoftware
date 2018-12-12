@@ -223,24 +223,24 @@
                            <children>
                               <AnchorPane layoutX="4.0" layoutY="3.0" prefHeight="538.0" prefWidth="289.0" style="-fx-background-color: orange;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="544.8" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label alignment="CENTER" layoutX="1.0" layoutY="2.0" prefHeight="39.0" prefWidth="293.0" text="Loged in employees">
+                                    <Label alignment="CENTER" layoutX="1.0" layoutY="2.0" prefHeight="39.0" prefWidth="293.0" text="List of present employees">
                                        <font>
                                           <Font size="22.0" />
                                        </font>
                                     </Label>
-                                    <JFXListView layoutX="-1.0" layoutY="54.0" prefHeight="486.0" prefWidth="296.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="52.0" />
+                                    <JFXListView fx:id="lstPreserntEmployees" layoutX="-1.0" layoutY="54.0" prefHeight="486.0" prefWidth="296.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="52.0" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="301.0" layoutY="4.0" prefHeight="543.0" prefWidth="540.0" style="-fx-background-color: yellow;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="302.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <HBox layoutX="36.0" layoutY="40.0" prefHeight="157.0" prefWidth="466.0" spacing="150.0" style="-fx-background-color: pink;" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="35.60000000000002">
+                                    <HBox layoutX="35.0" layoutY="128.0" prefHeight="157.0" prefWidth="466.0" spacing="150.0" style="-fx-background-color: pink;" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="36.60000000000002">
                                        <children>
                                           <ProgressIndicator progress="1.0" radius="70.0" />
                                           <ProgressIndicator progress="1.0" radius="70.0" />
                                           <ProgressIndicator progress="1.0" radius="70.0" />
                                        </children>
                                     </HBox>
-                                    <LineChart layoutX="16.0" layoutY="272.0" prefHeight="208.0" prefWidth="506.0" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="272.0">
+                                    <LineChart layoutX="16.0" layoutY="313.0" prefHeight="208.0" prefWidth="506.0" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="313.0">
                                       <xAxis>
                                         <CategoryAxis side="BOTTOM" />
                                       </xAxis>
@@ -248,7 +248,7 @@
                                         <NumberAxis side="LEFT" />
                                       </yAxis>
                                     </LineChart>
-                                    <Label alignment="CENTER" layoutX="43.0" layoutY="227.0" prefHeight="32.0" prefWidth="451.0" text="Weekly sales(Profit)" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.80000000000001" AnchorPane.topAnchor="227.0">
+                                    <Label alignment="CENTER" layoutX="43.0" layoutY="281.0" prefHeight="32.0" prefWidth="451.0" text="Weekly sales(Profit)" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.80000000000001" AnchorPane.topAnchor="281.0">
                                        <font>
                                           <Font size="21.0" />
                                        </font>
@@ -267,6 +267,14 @@
                                           <Insets />
                                        </opaqueInsets>
                                     </HBox>
+                                    <AnchorPane layoutX="10.0" layoutY="9.0" prefHeight="90.0" prefWidth="613.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="56.0" text="Enter ID of employees :" AnchorPane.leftAnchor="14.0" />
+                                          <JFXButton layoutX="389.0" layoutY="52.0" onAction="#MarkEmployeeAsPresent" prefHeight="22.0" prefWidth="190.0" text="Mark Employee as present" AnchorPane.leftAnchor="389.0" />
+                                          <Label layoutX="215.0" layoutY="14.0" text="Register present employees" />
+                                          <JFXTextField fx:id="txtEmployeeID" layoutX="200.0" layoutY="51.0" prefHeight="24.0" prefWidth="163.0" AnchorPane.leftAnchor="200.0" />
+                                       </children>
+                                    </AnchorPane>
                                  </children>
                               </AnchorPane>
                            </children></AnchorPane>
