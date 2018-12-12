@@ -38,7 +38,7 @@ public class SqlEmployeeRegister
     {
         //insert(id, name, surname, dob, gender, occupasion,nationality,address,recruit_date)
         String sql = "INSERT INTO EMPLOYEES "
-            + "VALUES ("+ID+"',"+Name+"', '"+Surname+"','"+Date+"')";
+            + "VALUES ('"+ID+"',"+Name+"', '"+Surname+"','"+Date+"')";
         
         SQLiteJDBC DataManagement = new SQLiteJDBC(sDatabaseName);
         DataManagement.InsertQuery(sql);
