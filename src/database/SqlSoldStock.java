@@ -27,8 +27,8 @@ public class SqlSoldStock
         + "( ID           TEXT    NOT NULL,"
         + " NAME           TEXT    NOT NULL, "
         + " PRICE        REAL    NOT NULL, "
-        + " DISCOUNT        REAL    NOT NULL, "
-        + " QTY        REAL    NOT NULL, "
+//        + " DISCOUNT        REAL    NOT NULL, "
+//        + " QTY        REAL    NOT NULL, "
         + " SOLD_DATE  TEXT     NOT NULL)";
         
         SQLiteJDBC DataManagement = new SQLiteJDBC(sDatabaseName);

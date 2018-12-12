@@ -244,6 +244,8 @@ public class MainController implements Initializable
             register.setSurname(emp.getSurname());
             register.setDate(time.getCurrentDate());
             register.insert();
+            SqlToGui tempGui = new SqlToGui();
+            tempGui.AddEmployeeToRegister(lstPreserntEmployees);
         }
        
         
