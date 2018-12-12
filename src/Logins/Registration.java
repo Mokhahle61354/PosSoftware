@@ -44,6 +44,7 @@ public class Registration{
 	public JButton btnRegister;
         public JComboBox cmbPosition;
         private JLabel lblAdress;
+        private JTextArea textarea;
         
         private String sFilepath;
 	
@@ -149,7 +150,7 @@ public class Registration{
                         employee.setDateOfBirth(txtdob.getText());
                         employee.setNationality(combo.getSelectedItem().toString());
                         employee.setGender(txtgender.getText());
-                        employee.setAddress("South africa mantjeng");
+                        employee.setAddress(textarea.getText());
                         employee.setRecruitmentDate("2018/11/11");
                         UserInfo encrypt = new UserInfo();
                         
@@ -158,6 +159,8 @@ public class Registration{
                         FileOperation picture = new FileOperation();
                         employee.setPicture(picture.PicToStringArray(sFilepath));
                         employee.insert();
+                        
+                        F.setVisible(false);
                                							
                     }
 		});
@@ -168,13 +171,6 @@ public class Registration{
 		JButton btnNewButton = new JButton("CANCEL");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txtName.setText("");
-				txtSurname.setText("");
-				txtdob.setText("");
-				txtgender.setText("");
-				txtposition.setText("");
-				txtId.setText("");
-				txtEmployeeid.setText("");
 				F.setVisible(false);
 			}
 		});

@@ -6,6 +6,7 @@
 package Salarysheet;
 
 import MainInterface.TimeManagement;
+import functions.UserInfo;
 import java.text.ParseException;
 
 /**
@@ -14,13 +15,12 @@ import java.text.ParseException;
  */
 public class SalarySheet {
     
-   private String Id;
    private double Salary;
      
     TimeManagement timeDifference= new TimeManagement();
    
-   public double GetSalaryOfUserById(String ID,double SalaryPerHour)throws ParseException
-   {
+   public double GetSalaryOfUserById(double SalaryPerHour)throws ParseException
+   {   
        Salary=SalaryPerHour*(timeDifference.GetLogedInTime());
        
        return Salary;
