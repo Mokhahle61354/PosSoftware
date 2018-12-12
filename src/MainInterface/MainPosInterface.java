@@ -41,13 +41,18 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 	/**
 	 * Launch the application.
 	 */
-	
+      /*  static CashButton cash = new CashButton();
+        
+	public void InitCashButton(CashButton cash){
+            this.cash=cash;
+        }*/
 
 	/**
 	 * Create the application.
 	 */
 	public MainPosInterface() {
 		initialize();
+             //   cash.InitMainPosInterface(this);
 	}
 
 	/**
@@ -738,7 +743,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 		});
 		btnNewButton.setBackground(new Color(135, 206, 235));
 		btnNewButton.setBounds(10, 628, 144, 52);
-                 frame.getContentPane().add(btnNewButton);
+                Mframe.getContentPane().add(btnNewButton);
 		
 		JButton btnCredit = new JButton("CREDIT");
 		btnCredit.setBackground(new Color(135, 206, 235));
@@ -760,7 +765,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 	});
 		btnCancel.setBackground(new Color(135, 206, 250));
 		btnCancel.setBounds(321, 628, 144, 52);
-		frame.getContentPane().add(btnCancel);
+		Mframe.getContentPane().add(btnCancel);
 		
 		
 		JButton btnAdvancedOptions = new JButton("ADVANCED OPTIONS");
