@@ -159,6 +159,8 @@ public class Registration{
                         FileOperation picture = new FileOperation();
                         employee.setPicture(picture.PicToStringArray(sFilepath));
                         employee.insert();
+                        
+                        F.setVisible(false);
                                							
                     }
 		});
@@ -169,8 +171,6 @@ public class Registration{
 		JButton btnNewButton = new JButton("CANCEL");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-                                
 				F.setVisible(false);
 			}
 		});
