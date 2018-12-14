@@ -60,6 +60,13 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 	/**
 	 * Initialize the contents of the frame.
 	 */
+        JList listOfStock = new JList();
+        
+        	public String getOrderNameEvent(ActionEvent e){
+                    JButton btn = (JButton)e.getSource();
+                    return btn.getText()+"  ";
+                }
+        
 	private void initialize() {
 		
 		
@@ -69,7 +76,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 		Mframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Mframe.getContentPane().setLayout(null);
 		Mframe.setSize(1300,730);
-		Mframe.setContentPane(new JLabel(new ImageIcon("C:\\Users\\malva\\Desktop\\p\\bb\\natural.jpg")));
+		Mframe.setContentPane(new JLabel(new ImageIcon("C:\\Users\\malva\\Desktop\\p\\bb\\nat ural.jpg")));
 		
 		
 		Font font = new Font("Areal", Font.BOLD,15);
@@ -87,6 +94,8 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 		JList list = new JList();
 		
 		list = new JList<>(dlm);
+                
+                listOfStock = list;
 		
 		list.setFont(font);
                 
@@ -155,14 +164,13 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 		
 		
 		
-		
 		JButton btnCaffeLatte = new JButton("CAFE LATTE");
 		btnCaffeLatte.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
                      if(e.getSource() == btnCaffeLatte) {
 					
-					String name = " -------- Caffe Latte ------ ";
+					String name =getOrderNameEvent(e);
 					double price = 11.75;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -199,7 +207,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                         if(e.getSource() == btnAmericano) {
 					
-					String name = " ---------- Americano --------- ";
+					String name =getOrderNameEvent(e);
 					double price = 9.50;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -228,7 +236,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                   if(e.getSource() == btnMeltSandwich) {
 					
-					String name = " ------ Melt Sandwich ------ ";
+					String name =getOrderNameEvent(e);
 					double price = 8.50;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -254,7 +262,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                       if(e.getSource() == btnSpinachArtichoke) {
 					
-					String name = " ---- Spinach Artichoke ---- ";
+					String name =getOrderNameEvent(e);
 					double price = 7.00;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -279,7 +287,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                      if(e.getSource() == btnHamAndCheese) {
 					
-					String name = " ---- Ham And Cheese ---- ";
+					String name =getOrderNameEvent(e);
 					double price = 8.25;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -304,7 +312,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                      if(e.getSource() == btnCappuccino) {
 					
-					String name = " -------- Cappuccino ------- ";
+					String name =getOrderNameEvent(e);
 					double price = 11.50;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -331,7 +339,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                       if(e.getSource() == btnCortado) {
 					
-					String name = " ---------- Cortado --------- ";
+					String name =getOrderNameEvent(e);
 					double price = 8.75;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -354,7 +362,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                        if(e.getSource() == btnEspresso) {
 					
-					String name = " ---------- Espresso --------- ";
+					String name =getOrderNameEvent(e);
 					double price = 8.25;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -380,7 +388,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
                      if(e.getSource() == btnFlatWhite) {
                     	 
 					
-					String name = " ------- Flat White ------- ";
+					String name =getOrderNameEvent(e);
 					double price = 10.50;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -408,7 +416,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                      if(arg0.getSource() == btnMacchiato) {
 					
-					String name = " ---------- Macchiato --------- ";
+					String name =getOrderNameEvent(arg0);
 					double price = 9.00;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -433,7 +441,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
 				if(e.getSource() == btnMocha) {
 					
-					String name = " ---------- Mocha --------- ";
+					String name =getOrderNameEvent(e);
 					double price = 12.50;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -458,7 +466,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                      if(e.getSource() == btnFrappuccino) {
 					
-					String name = " -------- Frappuccino ------- ";
+					String name =getOrderNameEvent(e);
 					double price = 15.25;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -484,7 +492,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                       if(arg0.getSource() == btnIrishCoffee) {
 					
-					String name = " ---------- Irısh Coffee --------- ";
+					String name =getOrderNameEvent(arg0);
 					double price = 15.75;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -509,7 +517,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                     if(e.getSource() == btnIcedAmericano) {
 					
-					String name = " -------- Iced Americano ------- ";
+					String name =getOrderNameEvent(e);
 					double price = 8.50;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -534,7 +542,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                      if(e.getSource() == btnIcedLatte) {
 					
-					String name = " -------- Iced Latte ------- ";
+					String name =getOrderNameEvent(e);
 					double price = 11.00;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -557,7 +565,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                     if(e.getSource() == btnSausage) {
 					
-					String name = " --- Sausage Sandwich --- ";
+					String name =getOrderNameEvent(e);
 					double price = 9.75;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -584,7 +592,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                      if(e.getSource() == btnChipotleChicken) {
 					
-					String name = " --- Chipotle Chicken ---- ";
+					String name =getOrderNameEvent(e);
 					double price = 8.00;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -609,7 +617,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                      if(e.getSource() == btnFigaroClub) {
 					
-					String name = " ---- Figaro Club ---- ";
+					String name =getOrderNameEvent(e);
 					double price = 8.75;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -634,7 +642,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                       if(e.getSource() == btnSmokedSalmon) {
 					
-					String name = " ---- Smoked Salmon ---- ";
+					String name =getOrderNameEvent(e);
 					double price = 9.50;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -658,7 +666,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                      if(e.getSource() == btnSalamiCheese) {
 					
-					String name = " ------- Salami Cheese ------ ";
+					String name =getOrderNameEvent(e);
 					double price = 9.00;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -683,7 +691,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                     if(e.getSource() == btnMozzarella) {
 					
-					String name = " ------ Mozzarella ------- ";
+					String name =getOrderNameEvent(e);
 					double price = 7.50;
 					OrderRecord r = new OrderRecord(name,price);
 					
@@ -707,13 +715,13 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
                      if(e.getSource() == btnChickenSandwich) {
 					
-					String name = " --- Chicken Sandwich --- ";
+					String name =getOrderNameEvent(e);
 					double price = 8.75;
 				
 					OrderRecord r = new OrderRecord(name,price);
 					
 					total += price;
-				
+                                        
 					dlm.addElement(r);
 					
 				}
@@ -734,30 +742,36 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 			JButton btnNewButton = new JButton("CASH");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				CashButton cash = new CashButton();
-                                
-				cash.frame.setLocationRelativeTo(null);
-				cash.frame.setVisible(true);
-                                
-                                OrderRecord order = new OrderRecord();
-                                
-                                TimeManagement currentDATE = new TimeManagement();
-		
-		                JList list = new JList();
-                                 ListModel model = list.getModel();
+				                        System.out.println(".actionPerformed() has started ");
+                            CashButton cash = new CashButton();
 
-                                 for(int i=0; i < model.getSize(); i++){
-                                  Object object =  model.getElementAt(i);  
+                            cash.frame.setLocationRelativeTo(null);
+                            cash.frame.setVisible(true);
+
+                            OrderRecord order = new OrderRecord();
+
+                            TimeManagement currentDATE = new TimeManagement();
+
+                            ListModel model = listOfStock.getModel();
+
+                            System.out.println(model.getSize());
+
+                            for (int i = 0; i < model.getSize() - 1; i++) {
+                                Object object = model.getElementAt(i);
+
+                                SqlSoldStock soldSTOCK = new SqlSoldStock();
+
+                                String sPruduct = object.toString();
+                                sPruduct = sPruduct.substring(0, sPruduct.indexOf("    "));
+                                System.out.println(sPruduct);
+                               
+
+                                soldSTOCK.setName(order.getName());
+                                soldSTOCK.setdPrice(order.getPrice());
+                                soldSTOCK.setsSoldDate(currentDATE.getCurrentDate());
                                   
-                                  SqlSoldStock soldSTOCK = new SqlSoldStock();
                                   
-                                  soldSTOCK.setName(order.getName());
-                                  soldSTOCK.setdPrice(order.getPrice());
-                                  soldSTOCK.setsSoldDate(currentDATE.getCurrentDate());
-                                  
-                                  
-                                  }
+                            }
                                 
 				
 			}
@@ -790,6 +804,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 		
 		
 		JButton btnAdvancedOptions = new JButton("ADVANCED OPTIONS");
+                btnAdvancedOptions.setForeground(Color.WHITE);
 		btnAdvancedOptions.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -810,7 +825,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 			}
 		});
 		btnAdvancedOptions.setBackground(new Color(128, 0, 0));
-		btnAdvancedOptions.setBounds(1119, 636, 139, 44);
+		btnAdvancedOptions.setBounds(1119, 636, 230, 44);
 		Mframe.getContentPane().add(btnAdvancedOptions);
 //		
 //		JButton button = new JButton("ADVANCED OPTIONS");
