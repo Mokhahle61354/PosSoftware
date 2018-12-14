@@ -34,6 +34,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import Logins.Registration;
+import MainInterface.MainPosInterface;
 import MainInterface.TimeManagement;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
@@ -160,6 +161,16 @@ public class MainController implements Initializable
         System.out.println("Change left buttons for : "+_sCurrentTab);
         
         ApLeftButtons.getChildren().setAll(node);
+    }
+    
+    @FXML
+    public void GoToCashierSystem(ActionEvent event)
+    {
+        MainPosInterface cashierMain = new MainPosInterface();
+        cashierMain.Mframe.setVisible(true);
+        ManagementMain main = new ManagementMain();
+        main.HideStage();
+        
     }
     
     //Start of Tab operation code..

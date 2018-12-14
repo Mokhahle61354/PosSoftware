@@ -157,7 +157,7 @@
                   </VBox>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="190.0" prefWidth="201.0" style="-fx-background-color: #456A96;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane prefHeight="190.0" prefWidth="200.0" style="-fx-background-color: #456A96;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <ImageView fitHeight="157.0" fitWidth="200.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <Label alignment="CENTER" layoutX="5.0" layoutY="157.0" prefHeight="17.0" prefWidth="200.0" text="Profile name" textAlignment="CENTER" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="157.0">
@@ -165,7 +165,6 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="157.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </children></AnchorPane>
          </children>
       </AnchorPane>
@@ -187,6 +186,10 @@
                         <DropShadow />
                      </effect>
                   </ImageView>
+                  <JFXButton alignment="CENTER" layoutX="606.0" layoutY="78.0" onAction="#GoToCashierSystem" prefHeight="67.0" prefWidth="200.0" text="Cashier System" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="88.0">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font></JFXButton>
                </children></AnchorPane>
             <AnchorPane prefHeight="67.0" prefWidth="838.0" style="-fx-background-color: #FDFDFD;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
