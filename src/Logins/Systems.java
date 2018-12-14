@@ -179,11 +179,11 @@ public class Systems extends ManagementMain
                 m.Mframe.setVisible(true); 
             }
         }
-        else 
-            
-            m.Mframe.setExtendedState(JFrame.MAXIMIZED_BOTH); 
-            m.Mframe.setLocationRelativeTo(null);
-            m.Mframe.setVisible(true);
+//        else 
+//            
+//            m.Mframe.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+//            m.Mframe.setLocationRelativeTo(null);
+//            m.Mframe.setVisible(true);
         
        /* if (txtID.getText().equals("project") && txtpass.getText().equals("0000")) {
             txtID.setText("");

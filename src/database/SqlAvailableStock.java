@@ -9,26 +9,20 @@ package database;
  *
  * @author mokhahle thabo
  */
-public class SqlCurrentStock
+public class SqlAvailableStock
 {
 
     private String Name;
     private double dPrice;
-    private String sBoughtDate;
-    private String ID;
-    private String sQty;
-    private String sDatabaseName="CurrentStock.db";
+    private String sDatabaseName="AvailableStock.db";
     
     public boolean CreateTable()
     {
                //create table
         String sql;
-        sql = "CREATE TABLE SOLD_STOCK"
-        + "(ID TEXT PRIMARY KEY     NOT NULL,"
-        + " NAME           TEXT    NOT NULL, "
-        + " PRICE        REAL    NOT NULL, "
-        + " QTY        INT    NOT NULL, "
-        + " BOUGHT_DATE  TEXT     NOT NULL)";
+        sql = "CREATE TABLE IF NOT EXISTS SOLD_STOCK"
+        + "(NAME    TEXT PRIMARY KEY    NOT NULL, "
+        + " PRICE        REAL    NOT NULL,)";
         
         SQLiteJDBC DataManagement = new SQLiteJDBC(sDatabaseName);
         boolean returnValue = DataManagement.CreateTable(sql);
@@ -38,8 +32,8 @@ public class SqlCurrentStock
     public void insert()
     {
         //insert(id, name, surname, dob, gender, occupasion,nationality,address,recruit_date)
-        String sql = "INSERT INTO SOLD_STOCK "
-            + "VALUES ('"+ID+"','"+Name+"', '"+dPrice+"','"+sQty+"','"+sBoughtDate+"')";
+        String sql = "INSERT INTO AVAILABLE_STOCK "
+            + "VALUES ('"+Name+"', '"+dPrice+"')";
         
         SQLiteJDBC DataManagement = new SQLiteJDBC(sDatabaseName);
         DataManagement.InsertQuery(sql);
@@ -55,14 +49,6 @@ public class SqlCurrentStock
 
     public void setdPrice(double dPrice) {
         this.dPrice = dPrice;
-    }
-
-    public void setsBoughtDate(String sBoughtDate) {
-        this.sBoughtDate = sBoughtDate;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
     }
 
 }

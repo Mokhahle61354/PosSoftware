@@ -16,6 +16,7 @@ public class DBVariables
     private String SoldStockTable = "SOLD_STOCK";
     private String LoginsDB = "Logins.db";
     private String LogingsTable = "LOGINS";
+    private String AvailableStockTable = "AVAILABLE_STOCK";
     private String EmployeeRegisterDB = "EmployeeRegister.db";
     
     public String getEmployeeRegisterDB() {
