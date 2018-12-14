@@ -152,6 +152,7 @@ public class ManagementMain extends Application {
     {
         Logins.Systems s = new Logins.Systems();
         try {
+            s.frmLoginSystem.setLocationRelativeTo(null);
             s.frmLoginSystem.setVisible(true);
         } catch (Exception e) {
             e.printStackTrace();
