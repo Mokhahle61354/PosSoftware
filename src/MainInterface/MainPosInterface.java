@@ -27,6 +27,7 @@ import java.awt.Font;
 import java.awt.SystemColor;
 
 import Logins.Systems;
+import database.SqlAvailableStock;
 import database.SqlSoldStock;
 import javax.swing.ListModel;
 
@@ -66,7 +67,10 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
                     JButton btn = (JButton)e.getSource();
                     return btn.getText()+"  ";
                 }
-        
+                
+                
+                
+                
 	private void initialize() {
 		
 		
@@ -173,7 +177,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 					String name =getOrderNameEvent(e);
 					double price = 11.75;
 					OrderRecord r = new OrderRecord(name,price);
-					
+					       
 					total += price;
 					
 					dlm.addElement(r);

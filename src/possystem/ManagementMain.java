@@ -7,6 +7,7 @@ package possystem;
 
 import Logins.FinalPosMain;
 import Logins.Registration;
+import database.SqlAvailableStock;
 import database.SqlEmployee;
 import database.SqlEmployeeRegister;
 import database.SqlSoldStock;
@@ -52,6 +53,9 @@ public class ManagementMain extends Application {
         regDB.CreateTable();
         SqlSoldStock soldStock = new SqlSoldStock();
         soldStock.CreateTable();
+        SqlAvailableStock availableStock = new SqlAvailableStock();
+        availableStock.CreateTable();
+        
 //        if(DB.CreateTable())
 //            System.out.println("Employee table already exist");
 //        else
