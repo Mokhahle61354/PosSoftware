@@ -27,6 +27,8 @@ import java.awt.Font;
 import java.awt.SystemColor;
 
 import Logins.Systems;
+import database.SqlSoldStock;
+import javax.swing.ListModel;
 
 public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionListener ,MouseListener{
 
@@ -735,9 +737,27 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
 				CashButton cash = new CashButton();
                                 
-						
+				cash.frame.setLocationRelativeTo(null);
 				cash.frame.setVisible(true);
                                 
+                                OrderRecord order = new OrderRecord();
+                                
+                                TimeManagement currentDATE = new TimeManagement();
+		
+		                JList list = new JList();
+                                 ListModel model = list.getModel();
+
+                                 for(int i=0; i < model.getSize(); i++){
+                                  Object object =  model.getElementAt(i);  
+                                  
+                                  SqlSoldStock soldSTOCK = new SqlSoldStock();
+                                  
+                                  soldSTOCK.setName(order.getName());
+                                  soldSTOCK.setdPrice(order.getPrice());
+                                  soldSTOCK.setsSoldDate(currentDATE.getCurrentDate());
+                                  
+                                  
+                                  }
                                 
 				
 			}
