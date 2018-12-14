@@ -76,8 +76,8 @@ public class ManagementMain extends Application {
             else //it allows manager to create himself.
                 RegisterMain();
                 
-                
-
+           
+            
         }
         //end of Creating table for our database
         
