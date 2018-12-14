@@ -2,6 +2,7 @@
 package Logins;
 
 
+import MainInterface.TimeManagement;
 import database.SqlEmployee;
 import functions.FileOperation;
 import functions.UserInfo;
@@ -55,7 +56,7 @@ public class Registration{
 	private void initialize() {
 		
 		F = new JFrame();
-		F.setBounds(100, 100, 588, 441);
+		F.setBounds(100, 100, 630, 441);
 		F.setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		F.setTitle("REGISTRATION");
 		F.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -135,12 +136,34 @@ public class Registration{
 		F.getContentPane().add(txtgender);
 		txtgender.setColumns(10);
 		
+                
+                JTextField textStreetAddress=new JTextField();
+                textStreetAddress.setBounds(405,240,198,20);
+                F.getContentPane().add(textStreetAddress);
+                
+                JTextField textStreet2Address=new JTextField();
+                textStreet2Address.setBounds(405,260,198,20);
+                F.getContentPane().add(textStreet2Address);
+                
+                JTextField textAddresscode=new JTextField();
+                textAddresscode.setBounds(405,280,198,20);
+                F.getContentPane().add(textAddresscode);
+                
+                JTextField textprovinceAddress=new JTextField();
+                textprovinceAddress.setBounds(405,300,198,20);
+                F.getContentPane().add(textprovinceAddress);
+
 		JButton btnRegister = new JButton("REGISTRATION");
 		btnRegister.addActionListener(new ActionListener()
                 {
                     public void actionPerformed(ActionEvent ae)
                     {
-				
+                        String sAddress=textStreetAddress.getText()+"\n"+textStreet2Address.getText()+"\n"+textAddresscode.getText()+
+                                "\n"+textprovinceAddress.getText();
+                       
+                        TimeManagement time=new TimeManagement();
+			
+                        Systems system=new Systems();
                         //upload Registration information to database
                         SqlEmployee employee = new SqlEmployee();
                         employee.setID(txtId.getText());
@@ -150,8 +173,8 @@ public class Registration{
                         employee.setDateOfBirth(txtdob.getText());
                         employee.setNationality(combo.getSelectedItem().toString());
                         employee.setGender(txtgender.getText());
-                        employee.setAddress(textarea.getText());
-                        employee.setRecruitmentDate("2018/11/11");
+                        employee.setAddress(sAddress);
+                        employee.setRecruitmentDate(time.getCurrentDate());
                         UserInfo encrypt = new UserInfo();
                         
                         employee.setPasswords(encrypt.EncrypteString(txtEmployeeid.getText()));
@@ -161,6 +184,7 @@ public class Registration{
                         employee.insert();
                         
                         F.setVisible(false);
+                        system.frmLoginSystem.setVisible(true);
                                							
                     }
 		});
@@ -194,17 +218,14 @@ public class Registration{
                 
                 lblAdress = new JLabel("ADDRESS");
 		lblAdress.setBounds(405,220, 114, 14);
-		F.getContentPane().add(lblAdress);
-                
-                JTextArea textarea=new JTextArea();
-                textarea.setBounds(405,240,130, 120);
-                F.getContentPane().add(textarea);
-                
+		F.getContentPane().add(lblAdress);                
 		
 		lblpic = new JLabel("");
 		lblpic.setBackground(new Color(102, 102, 102));
 		lblpic.setBounds(405, 14, 137, 137);
 		F.getContentPane().add(lblpic);
+                
+                
         }	
             
 	
