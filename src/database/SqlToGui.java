@@ -88,15 +88,16 @@ public class SqlToGui
             stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery( sql );
 
+            TimeManagement tempTime = new TimeManagement();
             while ( rs.next() ) 
             {
                 String id = rs.getString("id");
                 String  name = rs.getString("name");
                 String surname = rs.getString("surname");
+                String Date = rs.getString("DATE");
                 
-                
-
-                ListOfIdName.add(id +" "+ name +" "+surname);
+                if(Date.equals(tempTime.getCurrentDate()))
+                    ListOfIdName.add(id +" "+ name +" "+surname);
 
             }
             rs.close();

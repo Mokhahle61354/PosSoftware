@@ -26,7 +26,7 @@ public class TimeManagement
         {
             Date date = null;
             try {
-                date = new SimpleDateFormat("dd/MM/yyyy").parse(yyyyMMdd);
+                date = new SimpleDateFormat("yyyy/MM/dd").parse(yyyyMMdd);
                 return date;
             } catch (ParseException ex) {
                 Logger.getLogger(TimeManagement.class.getName()).log(Level.SEVERE, null, ex);

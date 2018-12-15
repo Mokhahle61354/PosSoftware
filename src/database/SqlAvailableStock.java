@@ -14,6 +14,7 @@ public class SqlAvailableStock
 
     private String Name;
     private double dPrice;
+    private int Qty;
     private String sDatabaseName="AvailableStock.db";
     
     public boolean CreateTable()
@@ -22,6 +23,7 @@ public class SqlAvailableStock
         String sql;
         sql = "CREATE TABLE IF NOT EXISTS AVAILABLE_STOCK"
         + "(NAME    TEXT    PRIMARY KEY     NOT NULL, "
+        + " QTY        INTEGER    NOT NULL, "
         + " PRICE        REAL    NOT NULL)";
         
         SQLiteJDBC DataManagement = new SQLiteJDBC(sDatabaseName);
@@ -33,7 +35,7 @@ public class SqlAvailableStock
     {
         //insert(id, name, surname, dob, gender, occupasion,nationality,address,recruit_date)
         String sql = "INSERT INTO AVAILABLE_STOCK "
-            + "VALUES ('"+Name+"', '"+dPrice+"')";
+            + "VALUES ('"+Name+"', '"+Qty+"', '"+dPrice+"')";
         
         SQLiteJDBC DataManagement = new SQLiteJDBC(sDatabaseName);
         DataManagement.InsertQuery(sql);
@@ -56,6 +58,11 @@ public class SqlAvailableStock
 
     public void setdPrice(double dPrice) {
         this.dPrice = dPrice;
+    }
+    
+    public void setQty(int Qty)
+    {
+        this.Qty = Qty;
     }
 
 }

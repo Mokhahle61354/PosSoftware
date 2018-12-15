@@ -33,7 +33,7 @@
                <children>
                   <AnchorPane prefHeight="400.0" prefWidth="646.0" AnchorPane.bottomAnchor="270.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <LineChart fx:id="StockLineChart" layoutX="44.0" layoutY="74.0" prefHeight="299.0" prefWidth="570.0">
+                        <LineChart fx:id="StockLineChart" layoutX="44.0" layoutY="74.0" prefHeight="299.0" prefWidth="570.0" AnchorPane.rightAnchor="31.0">
                           <xAxis>
                             <CategoryAxis fx:id="XStockAxis" side="BOTTOM" />
                           </xAxis>
@@ -50,9 +50,9 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" layoutX="-2.0" layoutY="-1.0" prefHeight="62.0" prefWidth="646.0">
                            <children>
-                              <JFXButton onAction="#PlotLineChart" prefHeight="50.0" prefWidth="250.0" text="Price" />
-                              <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="250.0" text="Qty" />
-                              <JFXButton layoutX="104.0" layoutY="10.0" prefHeight="50.0" prefWidth="250.0" text="Discount" />
+                              <JFXButton onAction="#PlotLineChart" prefHeight="50.0" prefWidth="250.0" text="This Week" />
+                              <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="250.0" text="Last Month" />
+                              <JFXButton layoutX="104.0" layoutY="10.0" prefHeight="50.0" prefWidth="250.0" text="Last Year" />
                            </children>
                         </HBox>
                      </children>
