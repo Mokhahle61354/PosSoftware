@@ -60,6 +60,8 @@ public class MerchiandiceController implements Initializable {
     @FXML
     public void PlotLineChart(ActionEvent e)
     {   
+        
+        StockLineChart.getData().clear();
         if(!MerchiandiceList.getItems().isEmpty())
         {
             String productName = MerchiandiceList.getSelectionModel().getSelectedItem().toString();
