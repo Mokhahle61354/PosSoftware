@@ -106,18 +106,19 @@ public class MainController implements Initializable
     @FXML public ImageView imgBtnSettings;
     @FXML public ImageView imgBtnLogout;
     
-    Systems loginGui = new Systems();
-    UserInfo LogedUser = new UserInfo(loginGui.logedinuser);
+
     public void initAllImages()
     {
+//        Systems loginGui = new Systems();
+//        UserInfo LogedUser = new UserInfo(loginGui.logedinuser);
         Image image = new Image("/images/addperson.png");
         imgBtnAddEmployee.setImage(image);
         image = new Image("/images/settings.png");
         imgBtnSettings.setImage(image);
         image = new Image("/images/logout.png");
-        imgBtnLogout.setImage(image);
-        image = LogedUser.getPicture();
-        imgProfilePic.setImage(image);
+//        imgBtnLogout.setImage(image);
+//        image = LogedUser.getPicture();
+//        imgProfilePic.setImage(image);
         
     }
     
