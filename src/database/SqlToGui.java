@@ -5,13 +5,16 @@
  */
 package database;
 
+import MainInterface.TimeManagement;
 import com.jfoenix.controls.JFXListView;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.Collection;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.LineChart;
@@ -112,19 +115,13 @@ public class SqlToGui
         
     }
     
-    public void LinePlotSoldStockPriceDate(String NameOfProduct,LineChart<?,?> lineChart)
+    public void AvailableStock(JFXListView StockListView)
     {
-        DBVariables DB = new DBVariables();
-        String sDatabaseName = DB.getSoldStockDB();
-        String sql = "SELECT * FROM "+DB.getSoldStockTable()+";";
+        String sDatabaseName = "AvailableStock.db";
+        String sql = "SELECT * FROM AVAILABLE_STOCK;";
         Connection con = null; 
         Statement stmt = null;
-        
-        lineChart.setTitle("Quantity sold with respect to time");
-        
-        //defining a series
-        XYChart.Series series = new XYChart.Series();
-        series.setName("Sold stock");
+        ObservableList<String> ListOfIdName = FXCollections.observableArrayList();
         
         try 
         {
@@ -135,17 +132,86 @@ public class SqlToGui
             stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery( sql );
 
+            System.out.println("Condition checking");
+            while ( rs.next() ) 
+            {
+                System.out.println("Condition satisfied");
+                String name = rs.getString("name");
+                //String surname = rs.getString("surname");
+                
+                System.out.println(name);
+                ListOfIdName.add(name);
+                
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+            
+            //This will show name of employees on the list
+            StockListView.setItems(ListOfIdName);
+            
+        } catch ( Exception e ) 
+        {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        System.out.println("Operation done successfully");
+    }
+    
+    public void LinePlotSoldStockPriceDate(String NameOfProduct,String yyyyMMdd,LineChart<?,?> lineChart)
+    {
+        SqlSoldStock soldStock = new SqlSoldStock();
+        String sDatabaseName = soldStock.getsDatabaseName();
+        String sql = "SELECT * FROM SOLD_STOCK;";
+        Connection con = null;
+        Statement stmt = null;
+        
+        lineChart.setTitle("Quantity sold with respect to time");
+        
+        //defining a series
+        XYChart.Series series = new XYChart.Series();
+        series.setName("Sold stock");
+        
+        TimeManagement PlotTime = new TimeManagement();
+        Date StartDate = PlotTime.toDate(yyyyMMdd);
+        DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        
+        try 
+        {
+            Class.forName(sClassName);
+            con = DriverManager.getConnection("jdbc:sqlite:"+sDatabaseName);
+            System.out.println("Opened database successfully");
+            con.setAutoCommit(false);
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery( sql );
+            
+            
+            int Qty= 0;
             while ( rs.next() ) 
             {
                 String name = rs.getString("NAME");
                 int price = rs.getInt("PRICE");
-                String SoldDate = rs.getString("SOLD_DATE");
+                String _SoldDate = rs.getString("SOLD_DATE");
+                Date soldDate = PlotTime.toDate(_SoldDate);
                 
-                if(NameOfProduct == name)
+                if(StartDate.equals(soldDate))
                 {
                     //populating the series with data
-                    series.getData().add(new XYChart.Data(SoldDate,price));     
-                
+                    if(NameOfProduct.equals(name))
+                    {
+                        Qty++;
+                    }
+                        //     
+                }
+                else
+                {
+                    series.getData().add(new XYChart.Data(sdf.format(soldDate),Qty));
+                    Calendar c = Calendar.getInstance();
+                    c.setTime(StartDate);
+                    c.add(Calendar.DATE, 1);  // number of days to add
+                    //String date = sdf.format(c.getTime());
+                    StartDate = c.getTime();
+                    Qty = 0;
                 }
                 
             }

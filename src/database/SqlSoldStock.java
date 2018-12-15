@@ -17,7 +17,12 @@ public class SqlSoldStock
     private String ID;
     private String sQty;
     private double dDiscount;
+    
     private String sDatabaseName="SoldStock.db";
+
+    public String getsDatabaseName() {
+        return sDatabaseName;
+    }
     
     public boolean CreateTable()
     {

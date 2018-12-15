@@ -43,9 +43,13 @@ public class MerchiandiceController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
+        
         // TODO
-        if(!MerchiandiceList.getItems().isEmpty())
-            SqlPlot.LinePlotSoldStockPriceDate(MerchiandiceList.getItems().get(0).toString(), StockLineChart);
+//        if(!MerchiandiceList.getItems().isEmpty())
+//            SqlPlot.LinePlotSoldStockPriceDate(MerchiandiceList.getItems().get(0).toString(), StockLineChart);
+        
+        SqlToGui sqlGui = new SqlToGui();
+        sqlGui.AvailableStock(MerchiandiceList);
     }
     
     public void initMain(MainController main)
@@ -57,7 +61,11 @@ public class MerchiandiceController implements Initializable {
     public void PlotLineChart(ActionEvent e)
     {   
         if(!MerchiandiceList.getItems().isEmpty())
-            SqlPlot.LinePlotSoldStockPriceDate(MerchiandiceList.getSelectionModel().getSelectedItem().toString(), StockLineChart);
+        {
+            String productName = MerchiandiceList.getSelectionModel().getSelectedItem().toString();
+            String StartDate = "2018/12/15";
+            SqlPlot.LinePlotSoldStockPriceDate(productName,StartDate, StockLineChart);
+        }
     }
     
     

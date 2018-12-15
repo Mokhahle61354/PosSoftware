@@ -6,6 +6,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TimeManagement
 {
@@ -18,6 +20,23 @@ public class TimeManagement
 		Date date = new Date();
 		return dateFormat.format(date);
 	}
+        
+        
+        public Date toDate(String yyyyMMdd)
+        {
+            Date date = null;
+            try {
+                date = new SimpleDateFormat("dd/MM/yyyy").parse(yyyyMMdd);
+                return date;
+            } catch (ParseException ex) {
+                Logger.getLogger(TimeManagement.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            finally
+            {
+                return date;
+            }
+            
+        }
         
         public String getCurrentDate()
 	{
