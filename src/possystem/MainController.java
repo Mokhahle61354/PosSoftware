@@ -120,8 +120,6 @@ public class MainController implements Initializable
 //        image = LogedUser.getPicture();
 //        imgProfilePic.setImage(image);
         
-        lblProfileName.setText(LogedUser.getName());
-        
     }
     
     Node node;
