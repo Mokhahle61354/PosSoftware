@@ -28,26 +28,9 @@ public class Systems extends ManagementMain
     JLabel lblNewLabel;
     JButton btncreat;
     JLabel lblbox;
-    JLabel lblNewLabel_1;
-
-   // Registration r = new Registration();
-
-    //String input=A.RegisteringNewUser(txtupdateusername.getText());
-    /**
-     * Launch the application.
-     */
-    /*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Systems window = new Systems();
-					window.frmLoginSystem.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
+    JLabel lblNewLabel_1;   
+    public static String logedinuser="";
+   
     public Systems() {
         initialize();
 
@@ -59,6 +42,9 @@ public class Systems extends ManagementMain
 		  * fram is the frame of Registration interface
 		  * 
          */
+        
+    
+        
         frmLoginSystem = new JFrame();
         frmLoginSystem.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/imagelog.jpg")));
         frmLoginSystem.setTitle("LOGIN SYSTEM");
@@ -114,27 +100,6 @@ public class Systems extends ManagementMain
         lblNewLabel.setForeground(Color.RED);
         frmLoginSystem.getContentPane().add(lblNewLabel);
 
-//        btncreat = new JButton("REGISTER TO LOGIN");
-//        btncreat.setForeground(Color.RED);
-//        btncreat.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//
-//                if (txtName.getText().equals("project") && txtpass.getText().equals("0000")) {
-//                    txtName.setText("");
-//                    txtpass.setText("");
-//                    r.F.setVisible(true);
-//                } else {
-//                    lblbox.setForeground(Color.RED);
-//                    lblbox.setFont(new Font("Tahoma", Font.BOLD, 16));
-//                    lblbox.setText("LOG IN AS MANAGER");
-//                }
-//
-//            }
-//        });
-//        btncreat.setForeground(Color.BLUE);
-//        btncreat.setFont(new Font("Tahoma", Font.BOLD, 10));
-//        btncreat.setBounds(186, 210, 210, 21);
-//        frmLoginSystem.getContentPane().add(btncreat);
 
         lblbox = new JLabel("");
         lblbox.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
@@ -154,20 +119,22 @@ public class Systems extends ManagementMain
 
     }
     
-
     public void CheckigInputToDefineTheUser() {
         UserInfo user=new UserInfo();
         TimeManagement LoginTime=new TimeManagement();
         MainPosInterface m = new MainPosInterface();
-        if(user.isAuthenticated(txtID.getText(),user.EncrypteString(txtpass.getText())))
-        {
+        String ID=txtID.getText();
+        
+        if(user.isAuthenticated(ID,user.EncrypteString(txtpass.getText())))
+        {  
             if(user.getOccupation().toLowerCase().equals("manager"))
             {
+                logedinuser=ID;
                 ShowStage();
             }
             else
             {
-                            
+                logedinuser=ID;            
                 LoginTime.setStartOfDutyTime();
                 System.out.println("Logins. check disco)");
                 txtID.setText("");
@@ -179,32 +146,15 @@ public class Systems extends ManagementMain
                 m.Mframe.setVisible(true); 
             }
         }
-//        else 
-//            
-//            m.Mframe.setExtendedState(JFrame.MAXIMIZED_BOTH); 
-//            m.Mframe.setLocationRelativeTo(null);
-//            m.Mframe.setVisible(true);
-        
-       /* if (txtID.getText().equals("project") && txtpass.getText().equals("0000")) {
-            txtID.setText("");
-            txtpass.setText("");
-            frmLoginSystem.setVisible(false);
-            MainPosInterface m = new MainPosInterface();
-            m.Mframe.setVisible(true); 
-        } else if (txtID.getText().equals("") || txtpass.getText().equals("")) {
-            lblbox.setForeground(Color.RED);
-            lblbox.setFont(new Font("Tahoma", Font.BOLD, 16));
-            lblbox.setText("PLEASE FILL ALL FIELDS");
-
-        }
-        else 
-        {
+       else 
+            
+        {    
             lblbox.setForeground(Color.RED);
             lblbox.setFont(new Font("Tahoma", Font.BOLD, 16));
             lblbox.setText("WRONG INPUTS..!!!");
             
-            ShowStage();
-        }*/
+            //ShowStage();
+        }
 
     }
 
