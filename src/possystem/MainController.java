@@ -34,6 +34,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import Logins.Registration;
+import Logins.Systems;
 import MainInterface.MainPosInterface;
 import MainInterface.TimeManagement;
 import com.jfoenix.controls.JFXButton;
@@ -43,6 +44,7 @@ import database.SqlEmployee;
 import database.SqlEmployeeRegister;
 import database.SqlToGui;
 import functions.UserInfo;
+import java.awt.Label;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -70,6 +72,10 @@ public class MainController implements Initializable
     @FXML public AnchorPane apDashBoard;
     @FXML public AnchorPane apEmployees;
     @FXML public AnchorPane apCharts;
+    
+    @FXML public ImageView imgProfilePic;
+    @FXML public Label lblProfileName;
+    
  
     /**
      * Initializes the controller class.
@@ -100,6 +106,8 @@ public class MainController implements Initializable
     @FXML public ImageView imgBtnSettings;
     @FXML public ImageView imgBtnLogout;
     
+    Systems loginGui = new Systems();
+    UserInfo LogedUser = new UserInfo(loginGui.logedinuser);
     public void initAllImages()
     {
         Image image = new Image("/images/addperson.png");
@@ -108,6 +116,8 @@ public class MainController implements Initializable
         imgBtnSettings.setImage(image);
         image = new Image("/images/logout.png");
         imgBtnLogout.setImage(image);
+        image = LogedUser.getPicture();
+        imgProfilePic.setImage(image);
         
     }
     
