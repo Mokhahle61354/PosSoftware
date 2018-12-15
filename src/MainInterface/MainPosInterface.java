@@ -759,20 +759,25 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
                             ListModel model = listOfStock.getModel();
 
                             System.out.println(model.getSize());
-
+                            //String[][] multi = new String[model.getSize()-1][];
+                            
                             for (int i = 0; i < model.getSize() - 1; i++) {
                                 Object object = model.getElementAt(i);
-
                                 SqlSoldStock soldSTOCK = new SqlSoldStock();
-
+                                
                                 String sPruduct = object.toString();
+                                System.out.println(sPruduct);
+                                
                                 sPruduct = sPruduct.substring(0, sPruduct.indexOf("    "));
                                 System.out.println(sPruduct);
+                                SqlAvailableStock avaStock = new SqlAvailableStock();
+                                double price = avaStock.GetPrice(sPruduct);
                                
 
-                                soldSTOCK.setName(order.getName());
-                                soldSTOCK.setdPrice(order.getPrice());
+                                soldSTOCK.setName(sPruduct);
+                                soldSTOCK.setdPrice(price);
                                 soldSTOCK.setsSoldDate(currentDATE.getCurrentDate());
+                                soldSTOCK.insert();
                                   
                                   
                             }

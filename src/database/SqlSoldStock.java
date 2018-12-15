@@ -39,7 +39,7 @@ public class SqlSoldStock
     {
         //insert(id, name, surname, dob, gender, occupasion,nationality,address,recruit_date)
         String sql = "INSERT INTO SOLD_STOCK "
-            + "VALUES ('"+ID+"','"+Name+"', '"+dPrice+"','"+dDiscount+"','"+sQty+"','"+sSoldDate+"')";
+            + "VALUES ('"+Name+"', '"+dPrice+"','"+sSoldDate+"')";
         
         SQLiteJDBC DataManagement = new SQLiteJDBC(sDatabaseName);
         DataManagement.InsertQuery(sql);

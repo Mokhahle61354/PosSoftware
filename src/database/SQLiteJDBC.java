@@ -452,4 +452,48 @@ public class SQLiteJDBC
         return isExist;
     }
  
+
+    public double GetPrice(String name)
+    {
+        Connection con = null; 
+        Statement stmt = null;
+        String sql = "SELECT * FROM AVAILABLE_STOCK;";
+        
+        double price =0;
+        
+        try 
+        {
+            Class.forName(sClassName);
+            con = DriverManager.getConnection(sConnectionUrl);
+            System.out.println("Opened database successfully");
+            con.setAutoCommit(false);
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery( sql );
+
+            while ( rs.next() ) 
+            {
+                String temp = rs.getString("name");
+                if(temp.equals(name))
+                    price = rs.getDouble("price");
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+            
+        } catch ( Exception e ) 
+        {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally
+        {
+            System.out.println("Operation done successfully");
+            return price;
+        }
+    }
+
+
+
+
+
 }

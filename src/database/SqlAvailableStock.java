@@ -21,7 +21,7 @@ public class SqlAvailableStock
                //create table
         String sql;
         sql = "CREATE TABLE IF NOT EXISTS AVAILABLE_STOCK"
-        + "(NAME    TEXT PRIMARY KEY    NOT NULL, "
+        + "(NAME    TEXT    PRIMARY KEY     NOT NULL, "
         + " PRICE        REAL    NOT NULL)";
         
         SQLiteJDBC DataManagement = new SQLiteJDBC(sDatabaseName);
@@ -38,6 +38,13 @@ public class SqlAvailableStock
         SQLiteJDBC DataManagement = new SQLiteJDBC(sDatabaseName);
         DataManagement.InsertQuery(sql);
         
+    }
+    
+    public double GetPrice(String name)
+    {
+        //select
+        SQLiteJDBC DataManagement = new SQLiteJDBC(sDatabaseName);
+        return DataManagement.GetPrice(name);
     }
     
     
