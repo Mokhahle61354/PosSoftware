@@ -109,12 +109,16 @@ public class MainController implements Initializable
 
     public void initAllImages()
     {
-        
+//        Systems loginGui = new Systems();
+//        UserInfo LogedUser = new UserInfo(loginGui.logedinuser);
         Image image = new Image("/images/addperson.png");
         imgBtnAddEmployee.setImage(image);
         image = new Image("/images/settings.png");
         imgBtnSettings.setImage(image);
         image = new Image("/images/logout.png");
+        imgBtnLogout.setImage(image);
+//        image = LogedUser.getPicture();
+//        imgProfilePic.setImage(image);
         
     }
     
