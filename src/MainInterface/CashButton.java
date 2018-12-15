@@ -56,25 +56,13 @@ public class CashButton {
     		
     		dChange = Double.parseDouble(txtMoneyPaid.getText());
     		dChange=dChange-mainPOSsystem.total;
+                mainPOSsystem.total=0;
     		txtChange.setText(String.valueOf(dChange));
     		
     	}
     	
-    	
-    	
-    	
-    	
-    	
     }
 	
-	
-	
-
-	
-	
-	
-	
-
 	/**
 	 * Launch the application.
 	 */
