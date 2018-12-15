@@ -29,6 +29,7 @@ import java.awt.SystemColor;
 import Logins.Systems;
 import database.SqlAvailableStock;
 import database.SqlSoldStock;
+import java.util.Arrays;
 import javax.swing.ListModel;
 
 public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionListener ,MouseListener{
@@ -39,7 +40,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
          public JFrame frame;
       
 	
-	double total =0.0;
+	public static double total =0.0;
 
 	/**
 	 * Launch the application.
@@ -68,7 +69,25 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
                     return btn.getText()+"  ";
                 }
                 
-                
+                public void sortList(JList list){
+                    
+                    ListModel model = list.getModel();
+                    
+                    int n = model.getSize();
+                    String[] data = new String[n];
+                    
+                    for(int i=0;i<n ;i++){
+                        data[i] = (String)model.getElementAt(i);
+                        
+                    }
+                    
+                    Arrays.sort(data);
+                    
+                    list.setListData(data);
+                    
+                    
+                    
+                }
                 
                 
 	private void initialize() {
@@ -563,7 +582,7 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 		btnIcedLatte.setBounds(1136, 470, 122, 70);
 		Mframe.getContentPane().add(btnIcedLatte);
 		
-		JButton btnSausage = new JButton(" SAUSAGE SANDWICH");
+		JButton btnSausage = new JButton("SAUSAGE SANDWICH");
 		btnSausage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -777,6 +796,13 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
                                 soldSTOCK.setName(sPruduct);
                                 soldSTOCK.setdPrice(price);
                                 soldSTOCK.setsSoldDate(currentDATE.getCurrentDate());
+                                
+                                JList listOJList = new JList();
+                                
+                                sortList(listOfStock);
+                                
+                                System.out.println(listOfStock);
+                                
                                 soldSTOCK.insert();
                                   
                                   
@@ -797,10 +823,6 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 		JButton btnCancel = new JButton("CANCEL");
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				
-				
-				
 				
 				if(arg0.getSource()==btnCancel) {
 			        dlm.removeAllElements();
@@ -853,18 +875,12 @@ public class MainPosInterface implements org.w3c.dom.events.MouseEvent , ActionL
 				
 				if(arg0.getSource() == btnTotal) {
 					
-					String name = null;
-					double price = 00;
-					
-					
-					
-					
+					String name = "";
+					double price = 0.0;
 					
 					OrderRecord t = new OrderRecord(total);
 					
 					t.toString1();
-					
-					
 					
 					dlm.addElement(t);
 					
