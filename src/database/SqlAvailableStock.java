@@ -50,6 +50,13 @@ public class SqlAvailableStock
     }
     
     
+    public void Update(String id,int quantity)
+    {
+        //update
+        String sql = "UPDATE AVAILABLE_STOCK set QTY = "+quantity+" where ID="+id+";";
+        SQLiteJDBC DataManagement = new SQLiteJDBC(sDatabaseName);
+        DataManagement.update(sql);
+    }
     
     
     public void setName(String Name) {

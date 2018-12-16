@@ -29,7 +29,8 @@ public class Systems extends ManagementMain
     JButton btncreat;
     JLabel lblbox;
     JLabel lblNewLabel_1;   
-    public static String logedinuser="";
+
+   
    
     public Systems() {
         initialize();
@@ -129,12 +130,12 @@ public class Systems extends ManagementMain
         {  
             if(user.getOccupation().toLowerCase().equals("manager"))
             {
-                logedinuser=ID;
+               // logedinuser=ID;
                 ShowStage();
             }
             else
             {
-                logedinuser=ID;            
+                //logedinuser=ID;            
                 LoginTime.setStartOfDutyTime();
                 System.out.println("Logins. check disco)");
                 txtID.setText("");
