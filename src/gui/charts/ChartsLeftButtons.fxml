@@ -97,22 +97,17 @@
                   <Insets left="45.0" />
                </padding>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" onAction="#SoldStockBtnHandler" prefHeight="38.0" prefWidth="200.0" text="Employee dashboard">
+            <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="48.0" onAction="#AvailableStockHandler" prefHeight="38.0" prefWidth="200.0" text="Available Stock">
                <padding>
                   <Insets left="45.0" />
                </padding>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="48.0" prefHeight="38.0" prefWidth="200.0" text="Salaries sheet">
+            <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" onAction="#SoldStockBtnHandler" prefHeight="38.0" prefWidth="200.0" text="Stock Sold">
                <padding>
                   <Insets left="45.0" />
                </padding>
             </JFXButton>
             <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="86.0" prefHeight="38.0" prefWidth="200.0" text="Remainders">
-               <padding>
-                  <Insets left="45.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="124.0" onAction="#SoldStockBtnHandler" prefHeight="38.0" prefWidth="200.0" text="Sold Stock">
                <padding>
                   <Insets left="45.0" />
                </padding>

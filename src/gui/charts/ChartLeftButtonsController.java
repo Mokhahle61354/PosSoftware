@@ -50,6 +50,16 @@ public class ChartLeftButtonsController implements Initializable {
         
     }
     
+    @FXML
+    public void AvailableStockHandler(ActionEvent event) throws IOException
+    {
+        FXMLOperations FXMLFunctions = new FXMLOperations();
+        node = (Node)FXMLLoader.load(getClass().getResource("/gui/charts/AvailableStock.fxml"));
+        node.setId("apCharts");
+        mainControler.apCharts.getChildren().setAll(node);
+        //Below method says contrain node to apCharts
+        FXMLFunctions.ConstrainToParent(mainControler.apCharts, node);
+    }
     
     
     

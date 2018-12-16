@@ -1,37 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="460.0" prefWidth="635.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="gui.charts.AvailableStockController">
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.charts.AvailableStockController">
    <children>
-      <SplitPane dividerPositions="0.35545023696682465" prefHeight="460.0" prefWidth="635.0">
+      <SplitPane dividerPositions="0.35545023696682465" prefHeight="460.0" prefWidth="635.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView prefHeight="458.0" prefWidth="226.0">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="ID" />
-                      <TableColumn prefWidth="75.0" text="NAME" />
-                        <TableColumn prefWidth="75.0" text="SALARY" />
-                    </columns>
-                  </TableView>
+                  <JFXListView fx:id="lstAvailableStock" layoutX="7.0" layoutY="44.0" prefHeight="400.0" prefWidth="213.0" AnchorPane.bottomAnchor="14.399999999999977" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="1.8000000000000114" AnchorPane.topAnchor="44.0" />
+                  <Label layoutX="76.0" layoutY="30.0" text="AVAILABLE STOCK" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <AnchorPane layoutX="6.0" layoutY="179.0" prefHeight="272.0" prefWidth="369.0">
+                  <AnchorPane layoutX="6.0" layoutY="137.0" prefHeight="314.0" prefWidth="395.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="4.400000000000034" AnchorPane.topAnchor="137.0">
                      <children>
-                        <BarChart prefHeight="273.0" prefWidth="379.0">
+                        <BarChart fx:id="StockBarChart" prefHeight="294.0" prefWidth="370.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>

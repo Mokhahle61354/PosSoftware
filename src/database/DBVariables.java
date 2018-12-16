@@ -12,12 +12,31 @@ package database;
 public class DBVariables 
 {
     private String EmployeesDB = "Employees.db";
+    private String EmployeeTable = "EMPLOYEES";
     private String SoldStockDB = "SoldStock.db";
     private String SoldStockTable = "SOLD_STOCK";
     private String LoginsDB = "Logins.db";
     private String LogingsTable = "LOGINS";
     private String AvailableStockTable = "AVAILABLE_STOCK";
+    private String AvailableStockDB = "AvailableStock.db";
     private String EmployeeRegisterDB = "EmployeeRegister.db";
+    
+    
+    public String getAvailableStockDB() {
+        return AvailableStockDB;
+    }
+    
+    public String getEmployeeTable() {
+        return EmployeeTable;
+    }
+
+    public String getLogingsTable() {
+        return LogingsTable;
+    }
+
+    public String getAvailableStockTable() {
+        return AvailableStockTable;
+    }
     
     public String getEmployeeRegisterDB() {
         return EmployeeRegisterDB;

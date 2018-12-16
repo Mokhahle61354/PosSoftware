@@ -160,85 +160,85 @@ public class SqlToGui
         System.out.println("Operation done successfully");
     }
     
-    public void LinePlotSoldStockPriceDate(String NameOfProduct,String yyyyMMdd,LineChart<?,?> lineChart)
-    {
-        SqlSoldStock soldStock = new SqlSoldStock();
-        String sDatabaseName = soldStock.getsDatabaseName();
-        String sql = "SELECT * FROM SOLD_STOCK;";
-        Connection con = null;
-        Statement stmt = null;
-        
-        lineChart.setTitle("Quantity sold with respect to time");
-        
-        //defining a series
-        XYChart.Series series = new XYChart.Series();
-        series.setName("Sold stock");
-        
-        TimeManagement PlotTime = new TimeManagement();
-        Date StartDate = PlotTime.toDate(yyyyMMdd);
-        DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        
-        try 
-        {
-            Class.forName(sClassName);
-            con = DriverManager.getConnection("jdbc:sqlite:"+sDatabaseName);
-            System.out.println("Opened database successfully");
-            con.setAutoCommit(false);
-            stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery( sql );
-            
-            
-            int Qty= 0;
-            while ( rs.next() ) 
-            {
-                String name = rs.getString("NAME");
-                int price = rs.getInt("PRICE");
-                String _SoldDate = rs.getString("SOLD_DATE");
-                Date soldDate = PlotTime.toDate(_SoldDate);
-                
-                if(StartDate.equals(soldDate))
-                {
-                    //populating the series with data
-                    if(NameOfProduct.equals(name))
-                    {
-                        Qty++;
-                    }
-                        //     
-                }
-                else
-                {
-                    Calendar c = Calendar.getInstance();
-                    c.setTime(soldDate);
-                    c.add(Calendar.DATE, -1);
-                    soldDate = c.getTime();
-                    
-                    series.getData().add(new XYChart.Data(sdf.format(soldDate),Qty));
-                    
-                    
-                    c.setTime(StartDate);
-                    c.add(Calendar.DATE, 1);  // number of days to add
-                    //String date = sdf.format(c.getTime());
-                    StartDate = c.getTime();
-                    Qty = 0;
-                }
-                
-            }
-            rs.close();
-            stmt.close();
-            con.close();
-            
-            lineChart.getData().addAll(series);
-            
-        } catch ( Exception e ) 
-        {
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-            System.exit(0);
-        }
-        System.out.println("Operation done successfully");
-        
-    }
+//    public void LinePlotSoldStockPriceDate(String NameOfProduct,String yyyyMMdd,LineChart<?,?> lineChart)
+//    {
+//        SqlSoldStock soldStock = new SqlSoldStock();
+//        String sDatabaseName = soldStock.getsDatabaseName();
+//        String sql = "SELECT * FROM SOLD_STOCK;";
+//        Connection con = null;
+//        Statement stmt = null;
+//        
+//        lineChart.setTitle("Quantity sold with respect to time");
+//        
+//        //defining a series
+//        XYChart.Series series = new XYChart.Series();
+//        series.setName("Sold stock");
+//        
+//        TimeManagement PlotTime = new TimeManagement();
+//        Date StartDate = PlotTime.toDate(yyyyMMdd);
+//        DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+//        
+//        try 
+//        {
+//            Class.forName(sClassName);
+//            con = DriverManager.getConnection("jdbc:sqlite:"+sDatabaseName);
+//            System.out.println("Opened database successfully");
+//            con.setAutoCommit(false);
+//            stmt = con.createStatement();
+//            ResultSet rs = stmt.executeQuery( sql );
+//            
+//            
+//            int Qty= 0;
+//            while ( rs.next() ) 
+//            {
+//                String name = rs.getString("NAME");
+//                int price = rs.getInt("PRICE");
+//                String _SoldDate = rs.getString("SOLD_DATE");
+//                Date soldDate = PlotTime.toDate(_SoldDate);
+//                
+//                if(StartDate.equals(soldDate))
+//                {
+//                    //populating the series with data
+//                    if(NameOfProduct.equals(name))
+//                    {
+//                        Qty++;
+//                    }
+//                        //     
+//                }
+//                else
+//                {
+//                    Calendar c = Calendar.getInstance();
+//                    c.setTime(soldDate);
+//                    c.add(Calendar.DATE, -1);
+//                    soldDate = c.getTime();
+//                    
+//                    series.getData().add(new XYChart.Data(sdf.format(soldDate),Qty));
+//                    
+//                    
+//                    c.setTime(StartDate);
+//                    c.add(Calendar.DATE, 1);  // number of days to add
+//                    //String date = sdf.format(c.getTime());
+//                    StartDate = c.getTime();
+//                    Qty = 0;
+//                }
+//                
+//            }
+//            rs.close();
+//            stmt.close();
+//            con.close();
+//            
+//            lineChart.getData().addAll(series);
+//            
+//        } catch ( Exception e ) 
+//        {
+//            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+//            System.exit(0);
+//        }
+//        System.out.println("Operation done successfully");
+//        
+//    }
     
-    public Series getSeriesForPlot(String NameOfProduct,String yyyyMMdd)
+    public Series getSeriesSoldStock(String NameOfProduct,String yyyyMMdd)
     {
         SqlSoldStock soldStock = new SqlSoldStock();
         String sDatabaseName = soldStock.getsDatabaseName();
@@ -318,5 +318,56 @@ public class SqlToGui
         }
         
     }
+    
+    public Series getSeriesAvailableStock()
+    {
+        
+        String sDatabaseName = "AvailableStock.db";
+        String sql = "SELECT * FROM AVAILABLE_STOCK;";
+        Connection con = null;
+        Statement stmt = null;
+        
+        //defining a series
+        Series series = new Series();
+        series.setName("Available stock");
+        
+        
+        try 
+        {
+            Class.forName(sClassName);
+            con = DriverManager.getConnection("jdbc:sqlite:"+sDatabaseName);
+            System.out.println("Opened database successfully");
+            con.setAutoCommit(false);
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery( sql );
+            
+            while ( rs.next() ) 
+            {
+                String name = rs.getString("NAME");
+                int Qty = rs.getInt("Qty");
+                
+                series.getData().add(new XYChart.Data(name,Qty));
+                
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+            
+            return series;
+            
+        } catch ( Exception e ) 
+        {
+            series = null;
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally
+        {
+            System.out.println("Operation done successfully");
+            return series;
+        }
+        
+    }
+    
     
 }

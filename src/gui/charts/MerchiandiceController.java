@@ -89,7 +89,7 @@ public class MerchiandiceController implements Initializable {
             String productName = MerchiandiceList.getSelectionModel().getSelectedItem().toString();
             String StartDate = "2018/12/15";
             StockLineChart.setTitle("Quantity sold with respect to time");
-            Series series = SqlPlot.getSeriesForPlot(productName, StartDate);
+            Series series = SqlPlot.getSeriesSoldStock(productName, StartDate);
             StockLineChart.getData().addAll(series);
             //SqlPlot.LinePlotSoldStockPriceDate(productName,StartDate, StockLineChart);
         }
@@ -123,7 +123,7 @@ public class MerchiandiceController implements Initializable {
             String productName = MerchiandiceList.getSelectionModel().getSelectedItem().toString();
             String StartDate = "2018/12/15";
             StockBarChart.setTitle("Quantity sold with respect to time");
-            Series series = SqlPlot.getSeriesForPlot(productName, StartDate);
+            Series series = SqlPlot.getSeriesSoldStock(productName, StartDate);
             StockBarChart.getData().addAll(series);
             //SqlPlot.LinePlotSoldStockPriceDate(productName,StartDate, StockLineChart);
         }
@@ -156,7 +156,7 @@ public class MerchiandiceController implements Initializable {
             String productName = MerchiandiceList.getSelectionModel().getSelectedItem().toString();
             String StartDate = "2018/12/15";
             StockScatterChart.setTitle("Quantity sold with respect to time");
-            Series series = SqlPlot.getSeriesForPlot(productName, StartDate);
+            Series series = SqlPlot.getSeriesSoldStock(productName, StartDate);
             StockScatterChart.getData().addAll(series);
             //SqlPlot.LinePlotSoldStockPriceDate(productName,StartDate, StockLineChart);
         }
@@ -189,7 +189,7 @@ public class MerchiandiceController implements Initializable {
             String productName = MerchiandiceList.getSelectionModel().getSelectedItem().toString();
             String StartDate = "2018/12/15";
             StockStackedChart.setTitle("Quantity sold with respect to time");
-            Series series = SqlPlot.getSeriesForPlot(productName, StartDate);
+            Series series = SqlPlot.getSeriesSoldStock(productName, StartDate);
             StockStackedChart.getData().addAll(series);
             //SqlPlot.LinePlotSoldStockPriceDate(productName,StartDate, StockLineChart);
         }

@@ -347,26 +347,7 @@
                 </Tab>
                   <Tab onSelectionChanged="#ClickChanged" text="Charts">
                     <content>
-                      <AnchorPane fx:id="apCharts" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="547.0" prefWidth="182.0">
-                                 <children>
-                                    <JFXButton prefHeight="38.0" prefWidth="182.0" text="Stock" />
-                                    <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="182.0" text="Employee" />
-                                    <JFXButton layoutX="10.0" layoutY="48.0" prefHeight="38.0" prefWidth="182.0" text="Discount" />
-                                    <JFXButton layoutX="10.0" layoutY="86.0" prefHeight="38.0" prefWidth="182.0" text="Prices" />
-                                    <JFXButton layoutX="10.0" layoutY="124.0" prefHeight="38.0" prefWidth="182.0" text="Profits" />
-                                    <JFXButton layoutX="10.0" layoutY="124.0" prefHeight="38.0" prefWidth="182.0" text="Monthly Payment" />
-                                 </children>
-                              </VBox>
-                              <AnchorPane layoutX="179.0" layoutY="4.0" prefHeight="544.0" prefWidth="659.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="179.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <Label layoutX="297.0" layoutY="124.0" text="Chart will be displayed here" />
-                                    <Label layoutX="258.0" layoutY="456.0" text="Buttons for charts //changing type and more" />
-                                 </children>
-                              </AnchorPane>
-                           </children>
-                        </AnchorPane>
+                      <AnchorPane fx:id="apCharts" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                     </content>
                   </Tab>
                   <Tab onSelectionChanged="#ClickChanged" text="Advertising">

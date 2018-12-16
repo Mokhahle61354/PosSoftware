@@ -44,6 +44,8 @@ import database.SqlEmployee;
 import database.SqlEmployeeRegister;
 import database.SqlToGui;
 import functions.UserInfo;
+import gui.FXMLOperations;
+import gui.charts.AvailableStockController;
 import java.awt.Label;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -66,6 +68,7 @@ public class MainController implements Initializable
     static btnLeftEmployeesController btnLeftEmployees = new btnLeftEmployeesController();
     static ChartLeftButtonsController btnleftCharts = new ChartLeftButtonsController();
     static MerchiandiceController merchiandice = new MerchiandiceController();
+    static AvailableStockController availableStock = new AvailableStockController();
     
     @FXML private AnchorPane ApLeftButtons;
     @FXML public AnchorPane apAdvertising;
@@ -94,7 +97,25 @@ public class MainController implements Initializable
         btnLeftEmployees.initMain(this);
         btnleftCharts.initMain(this);
         merchiandice.initMain(this);
+        availableStock.initMain(this);
+        initGui();
         
+    }
+    
+    private void initGui()*4=
+    {
+        System.out.println("Node sucessfully created");
+        try
+        {
+            TabNode = (Node)FXMLLoader.load(getClass().getResource("/gui/charts/AvailableStock.fxml"));
+            FXMLOperations fxOpp = new FXMLOperations();
+            TabNode.setId("apCharts");
+            apCharts.getChildren().setAll(TabNode);
+            fxOpp.ConstrainToParent(apCharts, TabNode);
+            System.out.println("Charts anchorpane was successfuly initialized");
+        } catch (IOException ex) {
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void initAds(btnLeftAdsController btnLeft)
@@ -123,6 +144,7 @@ public class MainController implements Initializable
     }
     
     Node node;
+    Node TabNode;
     
     //Check if tab has changed
     @FXML
@@ -170,7 +192,6 @@ public class MainController implements Initializable
         }
         
         System.out.println("Change left buttons for : "+_sCurrentTab);
-        
         ApLeftButtons.getChildren().setAll(node);
     }
     
