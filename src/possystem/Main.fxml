@@ -222,9 +222,9 @@
               <tabs>
                 <Tab onSelectionChanged="#ClickChanged" text="DashBoard">
                   <content>
-                    <AnchorPane fx:id="apDashBoard" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: red;">
+                    <AnchorPane fx:id="apDashBoard" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FDFDFD;">
                            <children>
-                              <AnchorPane layoutX="4.0" layoutY="3.0" prefHeight="538.0" prefWidth="289.0" style="-fx-background-color: orange;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="544.8" AnchorPane.topAnchor="0.0">
+                              <AnchorPane layoutX="4.0" layoutY="3.0" prefHeight="538.0" prefWidth="289.0" style="-fx-background-color: oran #FDFDFDge;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="544.8" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <Label alignment="CENTER" layoutX="1.0" layoutY="2.0" prefHeight="39.0" prefWidth="293.0" text="List of present employees">
                                        <font>
@@ -234,9 +234,9 @@
                                     <JFXListView fx:id="lstPreserntEmployees" layoutX="-1.0" layoutY="54.0" prefHeight="486.0" prefWidth="296.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="52.0" />
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="301.0" layoutY="4.0" prefHeight="543.0" prefWidth="540.0" style="-fx-background-color: yellow;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="302.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <AnchorPane layoutX="301.0" layoutY="4.0" prefHeight="543.0" prefWidth="540.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="302.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <HBox layoutX="35.0" layoutY="128.0" prefHeight="157.0" prefWidth="466.0" spacing="150.0" style="-fx-background-color: pink;" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="36.60000000000002">
+                                    <HBox layoutX="35.0" layoutY="128.0" prefHeight="157.0" prefWidth="466.0" spacing="150.0" style="-fx-background-color: #FDFDFD;" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="36.60000000000002">
                                        <children>
                                           <ProgressIndicator progress="1.0" radius="70.0" />
                                           <ProgressIndicator progress="1.0" radius="70.0" />
@@ -251,7 +251,7 @@
                                         <NumberAxis side="LEFT" />
                                       </yAxis>
                                     </LineChart>
-                                    <Label alignment="CENTER" layoutX="43.0" layoutY="281.0" prefHeight="32.0" prefWidth="451.0" text="Weekly sales(Profit)" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.80000000000001" AnchorPane.topAnchor="281.0">
+                                    <Label alignment="CENTER" layoutX="43.0" layoutY="281.0" prefHeight="32.0" prefWidth="451.0" text="Sold items at specific day" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.80000000000001" AnchorPane.topAnchor="281.0">
                                        <font>
                                           <Font size="21.0" />
                                        </font>
